@@ -4,6 +4,10 @@ const cors = require("cors");
 const { DB_URL } = require("./utils/config");
 const mongoose = require("mongoose");
 const { info } = require("./utils/logger");
+const userController = require("./controllers/user");
+const productController = require("./controllers/product");
+const cartController = require("./controllers/cart");
+const orderController = require("./controllers/order");
 const { requestLogger, unknownEndpoint } = require("./utils/middleware");
 
 app.use(cors());
@@ -16,6 +20,11 @@ mongoose
     info("DB connected Successfully");
   })
   .catch((err) => info(err));
+
+app.use("/api/user", userController);
+app.use("/api/product", productController);
+app.use("/api/order", orderController);
+app.use("/api/cart", cartController);
 
 app.get("/", (req, res) => {
   res.send("Hamro Madira app");

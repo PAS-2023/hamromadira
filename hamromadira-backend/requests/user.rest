@@ -1,0 +1,45 @@
+POST http://localhost:3001/api/user
+content-type: application/json
+
+{
+    "fullname":"Alex Romanov",
+    "username":"alex123",
+    "password":"password123",
+    "email":"alexr@gmail.com",
+    "phone":"977-1234567890",
+    "address":[{"district":"Chitwan","city":"Bharatpur-11","landmark":"near gaida"}],
+    "userType":"user",
+    "isDisabled":false
+}
+
+###
+GET http://localhost:3001/api/user
+
+###
+POST http://localhost:3001/api/product
+content-type: application/json
+
+{
+    "productName":"Tuborg Beer",
+    "categoryId":"RUM",
+    "productBrand":"Khukri",
+    "skus":[{"sku":"Tuborg 500ml Beer CAN","price":285,"quantity":567,"feature":"Canned Beer"},{"sku":"Tuborg 350ml Beer CAN","price":175,"quantity":75,"feature":"150 ml glass bottles."}],
+    "manufacture":"Gorkha Brewery Pvt. Ltd.",
+    "productDescription":"Beer manufactured under Danish license",
+}
+
+###
+GET http://localhost:3001/api/order
+
+###
+POST http://localhost:3001/api/order
+content-type: application/json
+
+{
+    "userId":"654f93c7fc6756ed7c122d68",
+    "paymentStatus":"pending",
+    "status":"placed",
+    "amount":1597,
+    "items":[{"sku":"Tuborg 500ml Beer CAN","quantity":1,"price":1597}],
+    "shippingAddress":{"district":"Lalitpur","city":"Bakha 10","landmark":"labim mall south"}
+}
