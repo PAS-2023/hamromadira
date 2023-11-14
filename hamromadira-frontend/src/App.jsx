@@ -1,7 +1,8 @@
+import NavBar from "./components/NavBar";
 const App = () => {
   return (
-    <div>
-      <h1>Hamro Madira Project</h1>
+    <div id="container"> 
+    <NavBar></NavBar>
     </div>
   );
 };
