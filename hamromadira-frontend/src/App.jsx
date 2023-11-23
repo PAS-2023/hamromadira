@@ -1,8 +1,9 @@
-import NavBar from "./components/NavBar/NavBar";
+import SignUpPage from "./pages/SignUpPage";
+
 function App() {
   return (
     <div>
-      <NavBar />
+      <SignUpPage />
     </div>
   );
 }
