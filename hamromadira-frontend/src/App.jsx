@@ -1,10 +1,8 @@
-import NavBar from "./components/NavBar/NavBar";
+import SignUpPage from "./pages/SignUpPage";
+import LoginPage from "./pages/LoginPage";
+
 function App() {
-  return (
-    <div>
-      <NavBar />
-    </div>
-  );
+  return <div>Hamro Madira App</div>;
 }
 
 export default App;
