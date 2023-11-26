@@ -4,8 +4,8 @@ import LoginPage from "./pages/LoginPage";
 function App() {
   return (
     <div>
-      {/* <SignUpPage /> */}
-      HAMRO MADIRA APP
+      <SignUpPage />
+      {/* HAMRO MADIRA APP */}
     </div>
   );
 }
