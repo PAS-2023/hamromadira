@@ -88,7 +88,7 @@ export default function LoginForm() {
           </button>
         </form>
         <div className="create-account">
-          Don't Have An Account ? <a href="">Sign Up</a>
+          Don't Have An Account ? <a href="/signup">Sign Up</a>
         </div>
       </div>
     </div>

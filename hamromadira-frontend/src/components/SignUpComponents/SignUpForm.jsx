@@ -157,7 +157,7 @@ export default function SignUpForm() {
         </button>
       </form>
       <div className="already-created">
-        Already Have An Account ? <a href="">Log in</a>
+        Already Have An Account ? <a href="/login">Log in</a>
       </div>
     </div>
   );
