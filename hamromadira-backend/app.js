@@ -4,6 +4,7 @@ const cors = require("cors");
 const { DB_URL } = require("./utils/config");
 const mongoose = require("mongoose");
 const { info } = require("./utils/logger");
+const loginController = require("./controllers/login");
 const userController = require("./controllers/user");
 const productController = require("./controllers/product");
 const cartController = require("./controllers/cart");
@@ -25,6 +26,7 @@ app.use("/api/user", userController);
 app.use("/api/product", productController);
 app.use("/api/order", orderController);
 app.use("/api/cart", cartController);
+app.use("/api/login", loginController);
 
 app.get("/", (req, res) => {
   res.send("Hamro Madira app");

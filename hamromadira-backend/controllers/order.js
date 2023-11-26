@@ -1,7 +1,8 @@
 const orderRoute = require("express").Router();
 const { Order } = require("../models/index");
+const { tokenExtractor, userExtractor } = require("../utils/middleware");
 
-orderRoute.get("/", async (req, res) => {
+orderRoute.get("/", tokenExtractor, userExtractor, async (req, res) => {
   try {
     const response = await Order.find({});
     res.status(200).json(response);
@@ -10,7 +11,7 @@ orderRoute.get("/", async (req, res) => {
   }
 });
 
-orderRoute.post("/", async (req, res) => {
+orderRoute.post("/", tokenExtractor, userExtractor, async (req, res) => {
   const newOrder = req.body;
   try {
     const response = await Order.create(newOrder);
