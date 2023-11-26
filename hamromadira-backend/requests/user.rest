@@ -25,12 +25,12 @@ content-type: application/json
     "productBrand":"Khukri",
     "skus":[{"sku":"Tuborg 500ml Beer CAN","price":285,"quantity":567,"feature":"Canned Beer"},{"sku":"Tuborg 350ml Beer CAN","price":175,"quantity":75,"feature":"150 ml glass bottles."}],
     "manufacture":"Gorkha Brewery Pvt. Ltd.",
-    "productDescription":"Beer manufactured under Danish license",
+    "productDescription":"Beer manufactured under Danish license"
 }
 
 ###
 GET http://localhost:3001/api/order
-
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NWRkNTk4NWEyNTRkOWQxNDA2NjdhNyIsInVzZXJuYW1lIjoiYWxleDEyMyIsInVzZXJUeXBlIjoidXNlciIsImlzRGlzYWJsZWQiOmZhbHNlLCJpYXQiOjE3MDA5MzUzODYsImV4cCI6MTcwMDkzODA4Nn0.ql8YHAA2WEuMEQBxSXwci5H-LmxnVEKnJshGu_1VUvM
 ###
 POST http://localhost:3001/api/order
 content-type: application/json
@@ -42,4 +42,15 @@ content-type: application/json
     "amount":1597,
     "items":[{"sku":"Tuborg 500ml Beer CAN","quantity":1,"price":1597}],
     "shippingAddress":{"district":"Lalitpur","city":"Bakha 10","landmark":"labim mall south"}
+}
+
+
+###
+POST http://localhost:3001/api/login
+content-type: application/json
+
+{
+    "username":"alex123",
+    "password":"password123",
+    "isEmail":false
 }
