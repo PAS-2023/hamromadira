@@ -40,10 +40,14 @@
   border-radius: 5px;
   display: flex;
 }
-.gender-dropdown {
-  border: none;
-  padding: 0;
+
+.form-input-error {
+  border: 1px solid red;
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
 }
+
 .gender-dropdown select {
   width: 50%;
   border: 1px solid black;
@@ -55,7 +59,11 @@
   border: 1px solid black;
 }
 
-.error-img {
+.error-img-display {
+  display: block;
+}
+
+.error-img-none {
   display: none;
 }
 
