@@ -1,63 +1,150 @@
 import "./signUp.css";
 import warning from "../../assets/Icons/warning.png";
+import { useState } from "react";
 
 export default function SignUpForm() {
+  const [userDetails, setUserDetails] = useState({
+    fullname: "",
+    username: "",
+    email: "",
+    phone: "",
+    password: "",
+    gender: "",
+  });
+  const [isError, setError] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { fullname, username, email, phone, password } = userDetails;
+    const isEmptyField = fullname && username && email && phone && password;
+    if (!isEmptyField) {
+      setError(!isError);
+    }
+    console.log(userDetails, isEmptyField);
+    setUserDetails({
+      fullname: "",
+      username: "",
+      email: "",
+      phone: "",
+      password: "",
+    });
+  };
   return (
     <div className="container-right">
       <h3>SIGN UP</h3>
-      <form>
-        <div className="form-input full-name">
-          <input type="text" placeholder="full name" />
+      <div className="form-title">Please fill in details to create account</div>
+      <form onSubmit={handleSubmit}>
+        <div
+          className={
+            isError ? "form-input-error full-name" : "form-input full-name"
+          }
+        >
+          <input
+            type="text"
+            placeholder="full name"
+            value={userDetails.fullname}
+            onChange={(e) =>
+              setUserDetails({ ...userDetails, fullname: e.target.value })
+            }
+          />
           <img
-            className="error-img"
+            className={isError ? "error-img-display" : "error-img-none"}
             src={warning}
             alt=""
             width="25px"
             height="25px"
           />
         </div>
-        <div className="form-input username">
-          <input type="text" name="" id="" placeholder="username" />
+        <div
+          className={
+            isError ? "form-input-error username" : "form-input username"
+          }
+        >
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="username"
+            value={userDetails.username}
+            onChange={(e) =>
+              setUserDetails({ ...userDetails, username: e.target.value })
+            }
+          />
           <img
-            className="error-img"
+            className={isError ? "error-img-display" : "error-img-none"}
             src={warning}
             alt=""
             width="25px"
             height="25px"
           />
         </div>
-        <div className="form-input email">
-          <input type="email" name="" id="" placeholder="myemail@email.com" />
+        <div
+          className={isError ? "form-input-error email" : "form-input email"}
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="myemail@email.com"
+            value={userDetails.email}
+            onChange={(e) =>
+              setUserDetails({ ...userDetails, email: e.target.value })
+            }
+          />
           <img
-            className="error-img"
+            className={isError ? "error-img-display" : "error-img-none"}
             src={warning}
             alt=""
             width="25px"
             height="25px"
           />
         </div>
-        <div className="form-input phone">
-          <input type="text" placeholder="phone" />
+        <div
+          className={isError ? "form-input-error phone" : "form-input phone"}
+        >
+          <input
+            type="text"
+            placeholder="phone"
+            value={userDetails.phone}
+            onChange={(e) => {
+              setUserDetails({ ...userDetails, phone: e.target.value });
+            }}
+          />
           <img
-            className="error-img"
+            className={isError ? "error-img-display" : "error-img-none"}
             src={warning}
             alt=""
             width="25px"
             height="25px"
           />
         </div>
-        <div className="form-input password">
-          <input type="password" name="" id="" placeholder="password" />
+        <div
+          className={
+            isError ? "form-input-error password" : "form-input password"
+          }
+        >
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            value={userDetails.password}
+            onChange={(e) =>
+              setUserDetails({ ...userDetails, password: e.target.value })
+            }
+          />
           <img
-            className="error-img"
+            className={isError ? "error-img-display" : "error-img-none"}
             src={warning}
             alt=""
             width="25px"
             height="25px"
           />
         </div>
-        <div className="form-input gender-dropdown">
-          <select name="gender">
+        <div className="gender-dropdown">
+          <select
+            name="gender"
+            onChange={(e) =>
+              setUserDetails({ ...userDetails, gender: e.target.value })
+            }
+          >
             <option value="male">male</option>
             <option value="female">female</option>
             <option value="others" selected>
@@ -65,7 +152,7 @@ export default function SignUpForm() {
             </option>
           </select>
         </div>
-        <button className="signup-btn" type="button">
+        <button className="signup-btn" type="submit">
           SIGN UP
         </button>
       </form>
