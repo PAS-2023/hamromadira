@@ -12,7 +12,7 @@ userRoute.get("/", async (req, res) => {
   }
 });
 
-userRoute.post("/", async (req, res) => {
+userRoute.post("/signup", async (req, res) => {
   const newUser = req.body;
   if (newUser.password.length < 3) {
     return res.status(403).json({
