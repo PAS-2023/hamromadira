@@ -15,8 +15,9 @@ export default function LoginForm() {
     e.preventDefault();
     if (userCredentials.username && userCredentials.password) {
       console.log(userCredentials);
+    }else{    
+      setError(!isError);
     }
-    setError(!isError);
     setUserCredentials({
       username: "",
       password: "",
