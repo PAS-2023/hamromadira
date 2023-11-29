@@ -1,19 +1,188 @@
 {
-  "posts": [
+    "product":[
+        {
+        "image":"images/mustang.png",
+        "productName":"Arna Beer",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+        },
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+        "image":"images/8848.png",
+        "productName":"8848 Vodka",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+        "image":"images/dram.png",
+        "productName":"Dram Whisky",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    }, {
+        "image":"images/fireball.png",
+        "productName":"Fireball Rum",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    },
+     {
+        "image":"images/g&g.png",
+        "productName":"Gorkha & Guns",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    },
+     {
+        "image":"images/goldenoak.png",
+        "productName":"Golden Oak",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    }, {
+        "image":"images/gorkha.png",
+        "productName":"Gorkha Beer",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    }, {
+        "image":"images/khukri.png",
+        "productName":"Khukri Rum",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    }, {
+        "image":"images/od1.png",
+        "productName":"Old Durbar",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    }, {
+        "image":"images/ruslan.png",
+        "productName":"Ruslan Vodka",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    }, {
+        "image":"images/tuborg.png",
+        "productName":"Tuborg Beer",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    }, {
+        "image":"images/yarchagumba.png",
+        "productName":"Yarchagumba",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    }, {
+        "image":"images/mustang.png",
+        "productName":"Arna Beer",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    }, {
+        "image":"images/mustang.png",
+        "productName":"Arna Beer",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
+    }, {
+        "image":"images/mustang.png",
+        "productName":"Arna Beer",
+        "quantity":"750 ml",
+        "price":"Rs 470",
+        "categoryId": "RUM",
+        "productBrand": "CG",
+        "skus": "40",
+        "manifacture": "gurkha beers"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    ],
+    "brands":[
+        
+    {
+        "image":"images/arna-ad.png",
+        "title":"arna beer ad"
+    },
+    {   "image":"images/tuborg-ad.png",
+        "title":"tuborg beer"
+    },
+    {
+         "image":"images/g&g-ad.png",
+        "title":"g&g ad"
+    },
+     {
+        "image":"images/khukri-ad.png",
+        "title":"khukri ad"
+        }
+],
+"topProducts":[
+    {
+    "image":"images/mustang.png",
+    "productName":"Arna Beer",
+    "quantity":"750 ml",
+    "price":"Rs 470"
+   },
+   {
+    "image":"images/khukri.png",
+    "productName":"Khukri Rum",
+    "quantity":"750 ml",
+    "price":"Rs 1900"
+   },
+   {
+    "image":"images/gorkha.png",
+    "productName":"Gorkha Beer",
+    "quantity":"750 ml",
+    "price":"Rs 1900"
+   },
+   {
+    "image":"images/goldenoak.png",
+    "productName":"Golden Oak",
+    "quantity":"750 ml",
+    "price":"Rs 1900"
+   }
+]
 }
