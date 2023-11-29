@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
 
 const stockSchema = new mongoose.Schema({
+  img: { type: String, required: false },
   sku: { type: String, required: true },
   price: { type: Number, required: true },
   quantity: { type: Number, required: true },
   feature: { type: String, required: false },
+  alcohol: { type: String, required: true },
 });
 
 const productSchema = new mongoose.Schema({
@@ -17,7 +19,15 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
     enum: {
-      values: ["RUM", "WHISKY", "SCOTCH", "BRANDY", "WINE", "VODKA"],
+      values: [
+        "RUM",
+        "WHISKY",
+        "BRANDY",
+        "WINE",
+        "VODKA",
+        "BEER",
+        "SOFT-DRINK",
+      ],
       message: "{VALUE} is not supported",
     },
   },
@@ -29,10 +39,6 @@ const productSchema = new mongoose.Schema({
   manufacture: {
     type: String,
     required: true,
-  },
-  productDescription: {
-    type: String,
-    required: false,
   },
 });
 
