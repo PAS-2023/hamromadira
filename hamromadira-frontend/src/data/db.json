@@ -1,188 +1,108 @@
 {
-    "product":[
-        {
-        "image":"images/mustang.png",
-        "productName":"Arna Beer",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-        },
-    {
-        "image":"images/8848.png",
-        "productName":"8848 Vodka",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    },
-    {
-        "image":"images/dram.png",
-        "productName":"Dram Whisky",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    }, {
-        "image":"images/fireball.png",
-        "productName":"Fireball Rum",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    },
-     {
-        "image":"images/g&g.png",
-        "productName":"Gorkha & Guns",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    },
-     {
-        "image":"images/goldenoak.png",
-        "productName":"Golden Oak",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    }, {
-        "image":"images/gorkha.png",
-        "productName":"Gorkha Beer",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    }, {
-        "image":"images/khukri.png",
-        "productName":"Khukri Rum",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    }, {
-        "image":"images/od1.png",
-        "productName":"Old Durbar",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    }, {
-        "image":"images/ruslan.png",
-        "productName":"Ruslan Vodka",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    }, {
-        "image":"images/tuborg.png",
-        "productName":"Tuborg Beer",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    }, {
-        "image":"images/yarchagumba.png",
-        "productName":"Yarchagumba",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    }, {
-        "image":"images/mustang.png",
-        "productName":"Arna Beer",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    }, {
-        "image":"images/mustang.png",
-        "productName":"Arna Beer",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    }, {
-        "image":"images/mustang.png",
-        "productName":"Arna Beer",
-        "quantity":"750 ml",
-        "price":"Rs 470",
-        "categoryId": "RUM",
-        "productBrand": "CG",
-        "skus": "40",
-        "manifacture": "gurkha beers"
-    }
+  "product": {
+    "_id": "65661eb2cb5f0ee81d2cae4c",
+    "productName": "Fanta",
+    "categoryId": "SOFT-DRINK",
+    "productBrand": "Coca-Cola",
+    "skus": [
+      {
+        "img": "",
+        "sku": "Fanta 2.25L",
+        "price": 260,
+        "quantity": 567,
+        "feature": "Coca-Cola is the most popular and biggest-selling soft drink in history, as well as one of the most recognizable brands in the world.",
+        "alcohol": "0",
+        "_id": "65661eb2cb5f0ee81d2cae4d"
+      },
+      {
+        "img": "",
+        "sku": "Fanta 1.5L",
+        "price": 210,
+        "quantity": 567,
+        "feature": "Coca-Cola is the most popular and biggest-selling soft drink in history, as well as one of the most recognizable brands in the world.",
+        "alcohol": "0",
+        "_id": "65661eb2cb5f0ee81d2cae4e"
+      },
+      {
+        "img": "",
+        "sku": "Fanta 1L",
+        "price": 130,
+        "quantity": 567,
+        "feature": "Coca-Cola is the most popular and biggest-selling soft drink in history, as well as one of the most recognizable brands in the world.",
+        "alcohol": "0",
+        "_id": "65661eb2cb5f0ee81d2cae4f"
+      },
+      {
+        "img": "",
+        "sku": "Fanta 2.25 x 6",
+        "price": 2170,
+        "quantity": 567,
+        "feature": "Coca-Cola is the most popular and biggest-selling soft drink in history, as well as one of the most recognizable brands in the world.",
+        "alcohol": "0",
+        "_id": "65661eb2cb5f0ee81d2cae50"
+      },
+      {
+        "img": "",
+        "sku": "Fanta 1.5L x 6",
+        "price": 1680,
+        "quantity": 567,
+        "feature": "Coca-Cola is the most popular and biggest-selling soft drink in history, as well as one of the most recognizable brands in the world.",
+        "alcohol": "0",
+        "_id": "65661eb2cb5f0ee81d2cae51"
+      },
+      {
+        "img": "",
+        "sku": "Fanta 1L x 6",
+        "price": 1080,
+        "quantity": 567,
+        "feature": "Coca-Cola is the most popular and biggest-selling soft drink in history, as well as one of the most recognizable brands in the world.",
+        "alcohol": "0",
+        "_id": "65661eb2cb5f0ee81d2cae52"
+      }
     ],
-    "brands":[
-        
+    "manufacture": "Coca-Cola Company Pvt. Ltd.",
+    "__v": 0
+  },
+
+  "brands": [
     {
-        "image":"images/arna-ad.png",
-        "title":"arna beer ad"
+      "image": "images/arna-ad.png",
+      "title": "arna beer ad"
     },
-    {   "image":"images/tuborg-ad.png",
-        "title":"tuborg beer"
+    { "image": "images/tuborg-ad.png", "title": "tuborg beer" },
+    {
+      "image": "images/g&g-ad.png",
+      "title": "g&g ad"
     },
     {
-         "image":"images/g&g-ad.png",
-        "title":"g&g ad"
-    },
-     {
-        "image":"images/khukri-ad.png",
-        "title":"khukri ad"
-        }
-],
-"topProducts":[
+      "image": "images/khukri-ad.png",
+      "title": "khukri ad"
+    }
+  ],
+  "topProducts": [
     {
-    "image":"images/mustang.png",
-    "productName":"Arna Beer",
-    "quantity":"750 ml",
-    "price":"Rs 470"
-   },
-   {
-    "image":"images/khukri.png",
-    "productName":"Khukri Rum",
-    "quantity":"750 ml",
-    "price":"Rs 1900"
-   },
-   {
-    "image":"images/gorkha.png",
-    "productName":"Gorkha Beer",
-    "quantity":"750 ml",
-    "price":"Rs 1900"
-   },
-   {
-    "image":"images/goldenoak.png",
-    "productName":"Golden Oak",
-    "quantity":"750 ml",
-    "price":"Rs 1900"
-   }
-]
+      "image": "images/mustang.png",
+      "productName": "Arna Beer",
+      "quantity": "750 ml",
+      "price": "Rs 470"
+    },
+    {
+      "image": "images/khukri.png",
+      "productName": "Khukri Rum",
+      "quantity": "750 ml",
+      "price": "Rs 1900"
+    },
+    {
+      "image": "images/gorkha.png",
+      "productName": "Gorkha Beer",
+      "quantity": "750 ml",
+      "price": "Rs 1900"
+    },
+    {
+      "image": "images/goldenoak.png",
+      "productName": "Golden Oak",
+      "quantity": "750 ml",
+      "price": "Rs 1900"
+    }
+  ]
 }
