@@ -1,13 +1,16 @@
 const mongoose = require("mongoose");
 
-const stockSchema = new mongoose.Schema({
-  img: { type: String, required: false },
-  sku: { type: String, required: true },
-  price: { type: Number, required: true },
-  quantity: { type: Number, required: true },
-  feature: { type: String, required: false },
-  alcohol: { type: String, required: true },
-});
+const stockSchema = new mongoose.Schema(
+  {
+    img: { type: String, required: false },
+    sku: { type: String, required: true },
+    price: { type: Number, required: true },
+    quantity: { type: Number, required: true },
+    feature: { type: String, required: false },
+    alcohol: { type: String, required: true },
+  },
+  { _id: false }
+);
 
 const productSchema = new mongoose.Schema({
   productName: {
