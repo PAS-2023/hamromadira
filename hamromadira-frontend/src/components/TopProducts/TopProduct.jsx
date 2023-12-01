@@ -9,7 +9,7 @@ const TopProduct = () => {
       setTopProducts(response.data);
     });
   }, []);
-  console.log(topProducts);
+
 
   return (
     <div className="topProduct-container">

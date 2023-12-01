@@ -13,17 +13,21 @@ import {
   redirect,
   useNavigate,
 } from "react-router-dom";
+import CartItem from "./components/Cart/CartItem";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
     <div>
-      <Routes>
+      {/* <Routes>
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/items" element={<ItemsPage />} />
         <Route path="/cart" element={<CartPage />} />
-      </Routes>
+      </Routes> */}
+      {/* <CartItem /> */}
+      <Cart />
     </div>
   );
 }

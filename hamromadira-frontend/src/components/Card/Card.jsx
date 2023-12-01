@@ -1,5 +1,6 @@
 import "./product.css"
-const Card = ({ image,productName, quantity, price }) => {
+const Card = ({ image, productName, quantity, price }) => {
+   
     return (
         <div className="card">
              <img src={image} alt="picture of raksi" />
