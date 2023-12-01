@@ -10,7 +10,7 @@ export default function NavMenu() {
     <>
       <ul className="nav-menu">
         <li>
-          <Link to="/home">
+          <Link to="/">
             <div className="nav-link">
               Home <img src={home} alt="" />
             </div>
