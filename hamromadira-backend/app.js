@@ -23,7 +23,7 @@ mongoose
   .catch((err) => info(err));
 
 app.use("/api/user", userController);
-app.use("/api/product", productController);
+app.use("/api/products", productController);
 app.use("/api/order", orderController);
 app.use("/api/cart", cartController);
 app.use("/api/login", loginController);
