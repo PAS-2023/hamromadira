@@ -55,7 +55,19 @@ content-type: application/json
 GET http://localhost:3001/api/products
 
 ###
-GET http://localhost:3001/api/products/items
+GET http://localhost:3001/api/products/items/Absolut_Citron_1L
+
+###
+PUT http://localhost:3001/api/products/items/Absolut_Citron_1L
+content-type: application/json
+
+{
+ "img": "",
+  "price": 4600,
+  "quantity": 171,
+  "feature": "Using lemon and just a hint of lime, Absolut have found the perfect balance of richness from the grain and water, tartness from the citrus fruits and just a hint of bitterness from the lemon peel.",
+  "alcohol": "40"
+}
 
 
 ###

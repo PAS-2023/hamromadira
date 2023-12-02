@@ -1,5 +1,5 @@
 const productRoute = require("express").Router();
-const { Product, Cart } = require("../models/index");
+const { Product } = require("../models/index");
 
 productRoute.get("/", async (req, res) => {
   try {
@@ -33,7 +33,42 @@ productRoute.get("/items/:sku", async (req, res) => {
       return items.skus.find((value) => value.sku === itemId);
     });
     if (response[0]) {
-      return res.status(200).json(response);
+      return res.status(200).json(response[0]);
+    }
+    return res.status(401).json({ error: "item not found" });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+productRoute.put("/items/:sku", async (req, res) => {
+  const itemId = req.params.sku;
+  const getItem = itemId.split("_")[0];
+  const regexPattern = new RegExp(getItem, "i");
+  const { price, quantity, img, feature, alcohol } = req.body;
+  try {
+    const result = await Product.find({ productName: regexPattern });
+    const response = result.map((items) => {
+      return items.skus.find((value) => value.sku === itemId);
+    });
+    if (response[0]) {
+      const upDateResult = await Product.updateOne(
+        {
+          _id: result[0]._id,
+          "skus.sku": response[0].sku,
+        },
+        {
+          $set: {
+            "skus.$.price": price,
+            "skus.$.quantity": quantity,
+            "skus.$.img": img,
+            "skus.$.feature": feature,
+            "skus.$.alcohol": alcohol,
+          },
+        },
+        { new: true }
+      );
+      return res.status(401).json(upDateResult);
     }
     return res.status(401).json({ error: "item not found" });
   } catch (err) {
