@@ -1,6 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+import filterReducer from "./reducers/searchReducer";
 
-const reducer = {};
+const reducer = {
+  filter: filterReducer,
+};
 
 const store = configureStore({ reducer });
 

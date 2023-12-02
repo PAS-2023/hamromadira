@@ -2,21 +2,30 @@
 import { useState } from "react";
 import warning from "../../assets/Icons/warning.png";
 import "./Login.css";
+import { loginService } from "../../services/userAccess/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
+  const navigate = useNavigate();
   const [userCredentials, setUserCredentials] = useState({
     username: "",
     password: "",
     isEmail: false,
   });
-  const [isError, setError] = useState(false);
+  const [isError, setError] = useState({ errorState: false, message: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (userCredentials.username && userCredentials.password) {
-      console.log(userCredentials);
-    }else{    
-      setError(!isError);
+      loginService(userCredentials)
+        .then((result) => {
+          console.log(result);
+          window.localStorage.setItem("userData", result);
+          navigate("/");
+        })
+        .catch((err) => console.log(err.response.status));
+    } else {
+      setError({ errorState: true, message: "enter credentials" });
     }
     setUserCredentials({
       username: "",
@@ -29,10 +38,17 @@ export default function LoginForm() {
       <div className="container-right">
         <h3>LOGIN</h3>
         <div className="form-title">Please Login To Continue</div>
+        <div
+          className={isError.errorState ? "error-txt-enable" : "error-txt-none"}
+        >
+          {isError.message}
+        </div>
         <form onSubmit={handleSubmit}>
           <div
             className={
-              isError ? "form-input-error username" : "form-input username"
+              isError.errorState
+                ? "form-input-error username"
+                : "form-input username"
             }
           >
             <input
@@ -52,7 +68,9 @@ export default function LoginForm() {
               }}
             />
             <img
-              className={isError ? "error-img-display" : "error-img-none"}
+              className={
+                isError.errorState ? "error-img-display" : "error-img-none"
+              }
               src={warning}
               alt=""
               width="25px"
@@ -61,7 +79,9 @@ export default function LoginForm() {
           </div>
           <div
             className={
-              isError ? "form-input-error password" : "form-input password"
+              isError.errorState
+                ? "form-input-error password"
+                : "form-input password"
             }
           >
             <input
@@ -77,7 +97,9 @@ export default function LoginForm() {
               }
             />
             <img
-              className={isError ? "error-img-display" : "error-img-none"}
+              className={
+                isError.errorState ? "error-img-display" : "error-img-none"
+              }
               src={warning}
               alt=""
               width="25px"

@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { useProductCartMutation } from "../../reducers/apiSlice";
 import ItemData from "./ItemData";
 
-
-
 const CartItem = () => {
   const [
     productCart,
@@ -18,14 +16,14 @@ const CartItem = () => {
   useEffect(() => {
     productCart();
   }, []);
-    console.log(productData)
+  console.log(productData);
 
-    const handleDelete = id => {
-        console.log("handle delete")
-    }
+  const handleDelete = (id) => {
+    console.log("handle delete");
+  };
 
   return (
-    < div className="table-wrapper">
+    <div className="table-wrapper">
       <table>
         <tr>
           <th> Item </th>
@@ -35,7 +33,7 @@ const CartItem = () => {
           <th> Remove </th>
         </tr>
         {success ? (
-          productData.slice(0,4).map((item) => {
+          productData.slice(0, 4).map((item) => {
             return (
               <tr key={item}>
                 <td> {item.productName}</td>
@@ -62,9 +60,7 @@ const CartItem = () => {
           <></>
         )}
       </table>
-      </div>
-
-
+    </div>
 
     //   <>
     //       <table>

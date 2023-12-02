@@ -1,8 +1,11 @@
 import "./signUp.css";
 import warning from "../../assets/Icons/warning.png";
 import { useState } from "react";
+import { signUpService } from "../../services/userAccess/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUpForm() {
+  const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState({
     fullname: "",
     username: "",
@@ -19,7 +22,11 @@ export default function SignUpForm() {
     if (!isEmptyField) {
       setError(!isError);
     }
-    console.log(userDetails, isEmptyField);
+    signUpService(userDetails)
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((err) => console.log(err));
     setUserDetails({
       fullname: "",
       username: "",

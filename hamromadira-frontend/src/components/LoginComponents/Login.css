@@ -63,3 +63,11 @@
 .create-account {
   padding: 1rem;
 }
+
+.error-txt-enable {
+  color: red;
+}
+
+.error-txt-none {
+  display: none;
+}

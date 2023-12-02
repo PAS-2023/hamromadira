@@ -1,4 +1,4 @@
-POST http://localhost:3001/api/user
+POST http://localhost:3001/api/user/signup
 content-type: application/json
 
 {
@@ -9,7 +9,8 @@ content-type: application/json
     "phone":"977-1234567890",
     "address":[{"district":"Chitwan","city":"Bharatpur-11","landmark":"near gaida"}],
     "userType":"user",
-    "isDisabled":false
+    "isDisabled":false,
+    "cart":[]
 }
 
 ###

@@ -22,7 +22,14 @@ userRoute.post("/signup", async (req, res) => {
   const saltRounds = 10;
   try {
     const passwordHash = await bcrypt.hash(newUser.password, saltRounds);
-    const response = await User.create({ ...newUser, password: passwordHash });
+    const response = await User.create({
+      ...newUser,
+      password: passwordHash,
+      cart: [],
+      userType: "user",
+      isDisabled: false,
+      address: [],
+    });
     res.status(200).json(response);
   } catch (error) {
     res.status(400).json({ error: error.message });
