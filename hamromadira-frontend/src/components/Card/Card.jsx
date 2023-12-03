@@ -1,5 +1,5 @@
 import "./product.css"
-const Card = ({ image, productName, quantity, price }) => {
+const Card = ({ image, sku, quantity, price,productName }) => {
    
     return (
         <div className="card">
@@ -7,8 +7,9 @@ const Card = ({ image, productName, quantity, price }) => {
             <div className="detail-list" >
             
                 <div>
-                 {productName}
+                 {sku}
                 </div>
+                <div>{productName}</div>
             <div>
                 {quantity}
             </div>

@@ -7,7 +7,7 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:3001/api' }),
   endpoints: (builder) => ({
       productCart: builder.mutation({
-          query: () => `product`
+          query: () => `products`
       }),
     //   login: builder.mutation({
     //       query: ({data, token}) => ({

@@ -18,10 +18,10 @@ function LandingPage() {
       <NavBar />
       <div className="Landin-container" style={LandingPageCSS}>
         <AdSlider />
+        <TopProduct />
+        <Brand />
         <Stock />
         <Product />
-        <Brand />
-        <TopProduct />
       </div>
       <Footer />
     </>

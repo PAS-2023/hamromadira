@@ -1,8 +1,13 @@
 .product-list{
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
-gap: 4rem;
+gap: 2rem;
 margin:4rem 7rem 0rem 7rem;
+}
+.product-title{
+    font-size: 1.5rem;
+    margin-top: 4rem;
+    margin-left :5rem;
 }
 
 .detail-list{

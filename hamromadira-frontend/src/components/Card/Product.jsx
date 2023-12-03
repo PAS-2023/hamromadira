@@ -1,19 +1,18 @@
-import { useEffect, useState } from 'react';
-import Card from '../../components/Card/Card';
-import "./product.css"
-// import"../TopProducts/topProduct.css"
-import axios from 'axios';
-
+import Card from "../../components/Card/Card";
+import "./product.css";
+import { useProductCartMutation } from "../../reducers/apiSlice";
+import { useEffect } from "react";
+import testImage from "../../assets/product_images/frooti 200ml.png"
 const Product = () => {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        axios.get("http://localhost:3002/product").then(response => {
-            setProducts(response.data)
-        })
-    }, [])
-    return (
-        <>
-             <div className='product-list'>
+  const [allProduct, { data: allProductData, isLoading, isSuccess }] =
+    useProductCartMutation();
+  useEffect(() => {
+    allProduct();
+  }, []);
+
+  return (
+    <>
+      {/* <div className='product-list'>
               {products.map((item) => {
                   return (
                       <>                              
@@ -22,10 +21,34 @@ const Product = () => {
                   )
                   
               })}
-          </div>
-        </>
-    )
-}
+          </div> */}
+      {isSuccess ? 
+        allProductData.map((item) => {
+          return (
+            <>
+              <div className="product-title">
+
+              {item.productName}
+              </div>
+              <div className="product-list">
+                {item.skus.map((each,index) => {
+                  return (
+                    <Card
+                      image={each.img}
+                      sku={each.sku}
+                      price={each.price}
+                      quantity={each.quantity}
+                      key={index}
+                    />
+                  );
+                })}
+              </div>
+            </>
+          );
+        })
+         :[]}
+        
+    </>
+  );
+};
 export default Product;
-
-
