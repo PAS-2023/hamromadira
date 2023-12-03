@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 import "./product.css";
+import { NavLink } from "react-router-dom";
 // import"../TopProducts/topProduct.css"
 import axios from "axios";
 
@@ -17,6 +18,7 @@ const Product = () => {
         {products.map((item) => {
           return (
             <>
+              {/* <NavLink to={`/product/${id}`}></NavLink> */}
               <Card
                 image={item.img}
                 productName={item.sku}

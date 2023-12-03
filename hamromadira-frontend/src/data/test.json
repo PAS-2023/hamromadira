@@ -1,0 +1,23 @@
+{
+  "product": [
+    {
+      "__id": "1",
+      "name": "sushil",
+      "add": "tej",
+      "skus": [
+        { "sku": "ab", "name": "sunil", "add": "tej" },
+        { "sku": "bc", "name": "sharmila", "add": "tej" }
+      ]
+    },
+    {
+      "__id": "2",
+      "name": "prab",
+      "add": "tej",
+      "skus": [
+        { "sku": "ab", "name": "sunil", "add": "tej" },
+        { "sku": "bc", "name": "sharmila", "add": "tej" }
+      ]
+    },
+    { "__id": "3", "name": "akash", "add": "tej" }
+  ]
+}
