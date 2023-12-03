@@ -53,6 +53,8 @@ content-type: application/json
   }
 ###
 GET http://localhost:3001/api/products
+###
+GET http://localhost:3001/api/products/BEER
 
 ###
 GET http://localhost:3001/api/products/items/Absolut_Citron_1L
