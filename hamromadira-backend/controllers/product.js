@@ -23,6 +23,20 @@ productRoute.get("/items", async (req, res) => {
   }
 });
 
+productRoute.get("/:category", async (req, res) => {
+  const category = req.params.category;
+  let categoryProduct = [];
+  try {
+    const result = await Product.find({ categoryId: category }, "skus");
+    result.map((item) => {
+      item.skus.map((value) => categoryProduct.push(value));
+    });
+    res.status(200).json(categoryProduct);
+  } catch (error) {
+    res.status(400).json({ error });
+  }
+});
+
 productRoute.get("/items/:sku", async (req, res) => {
   const itemId = req.params.sku;
   const getItem = itemId.split("_")[0];
