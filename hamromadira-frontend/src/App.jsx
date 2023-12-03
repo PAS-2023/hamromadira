@@ -4,17 +4,19 @@ import LoginPage from "./pages/LoginPage";
 import LandingPage from "./pages/LandingPage";
 import ItemsPage from "./pages/ItemsPage";
 import CartPage from "./pages/CartPage";
-import {
-  Routes,
-  Route,
-  Link,
-  Navigate,
-  useMatch,
-  redirect,
-  useNavigate,
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setUser } from "./reducers/userReducer";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const userData = JSON.parse(window.localStorage.getItem("userData"));
+    if (userData) {
+      dispatch(setUser(userData.username));
+    }
+  }, []);
   return (
     <div>
       <Routes>

@@ -4,8 +4,11 @@ import warning from "../../assets/Icons/warning.png";
 import "./Login.css";
 import { loginService } from "../../services/userAccess/auth";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../reducers/userReducer";
 
 export default function LoginForm() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [userCredentials, setUserCredentials] = useState({
     username: "",
@@ -19,11 +22,11 @@ export default function LoginForm() {
     if (userCredentials.username && userCredentials.password) {
       loginService(userCredentials)
         .then((result) => {
-          console.log(result);
-          window.localStorage.setItem("userData", result);
+          dispatch(setUser(result.username));
+          window.localStorage.setItem("userData", JSON.stringify(result));
           navigate("/");
         })
-        .catch((err) => console.log(err.response.status));
+        .catch((err) => console.log(err));
     } else {
       setError({ errorState: true, message: "enter credentials" });
     }
