@@ -3,50 +3,36 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-let URL = "http://localhost:3001/api/products/items";
-
+let URL = "http://localhost:3002/product";
+// http://localhost:3002/product?sku=Fanta_2.25L
 export const ProductDetails = () => {
-  const { id: productId } = useParams();
-  const { product, setProduct } = useState(1);
-  useEffect(() => {}, []);
-
+  const { sku } = useParams();
+  const [product, setProduct] = useState(1);
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const {
-          data: { data },
-        } = axios.get(`${URL}/${productId}?populate=*`);
-        setProduct(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    if (productId) {
-      fetchData();
+    try {
+      axios.get(`${URL}?sku=${sku}`).then((response) => {
+        setProduct(response.data);
+      });
+      console.log(product);
+    } catch (error) {
+      console.log(error);
     }
-  }, [productId]);
+  }, []);
 
   return (
     <div className="main-container">
       <div className="item-container">
         <div className="item-detail">
-          <div className="item-picture"></div>
+          <div className="item-picture">{product.img}</div>
           <div className="item-description">
             <span>data/</span>
             <ul className="detail-list">
-              <li>Volume: 750ml</li>
-              <li>Brand: Khukri</li>
-              <li>Category: Rum</li>
-              <li>Alcohol: 42%</li>
+              <li>Price: {product.price}</li>
+              <li>Stock: {product.quantity}</li>
+              <li>Category: </li>
+              <li>Alcohol:{product.alcohol}%</li>
             </ul>
-            <p className="description">
-              Flavours that are extracted from authentic Nepalese spices are
-              masterfully blended with distills of rich molasses and fresh
-              spring water from the Himalayas. It is then aged in homes of
-              exclusive wooden casks at high altitudes resulting in a tasteful
-              concoction of assorted spices enriched with dry fruits that ends
-              with a sweet, smooth and long finish.
-            </p>
+            <p className="description">{product.feature}</p>
           </div>
         </div>
 
