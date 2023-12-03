@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import LandingPage from "./pages/LandingPage";
 import ItemsPage from "./pages/ItemsPage";
 import CartPage from "./pages/CartPage";
+import ProductDescription from "./pages/ProductDescription";
 import {
   Routes,
   Route,
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/items" element={<ItemsPage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/productDes" element={<ProductDescription/>}/>
       </Routes>
     </div>
   );
