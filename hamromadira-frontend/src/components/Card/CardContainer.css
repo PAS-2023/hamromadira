@@ -43,6 +43,9 @@ hr {
 
 .productPanelHead {
   padding-left: 1.9rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .prodName {

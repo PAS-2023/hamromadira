@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Card } from "./Card";
 import "./CardContainer.css";
 import { getCategoryProducts } from "../../services/products/products";
+import productHead from "../../../public/images/productHead.png";
 
 export function CardContainer({ category }) {
   //use category call here
@@ -14,7 +15,7 @@ export function CardContainer({ category }) {
   return (
     <>
       <div className="productPanelHead">
-        <img src="./assets/productHead.png" alt="" />
+        <img src={productHead} alt="" />
         <h3>{category}</h3>
       </div>
       <div className="grid-container">
