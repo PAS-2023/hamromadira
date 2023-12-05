@@ -4,6 +4,7 @@ const stockSchema = new mongoose.Schema(
   {
     img: { type: String, required: false },
     sku: { type: String, required: true },
+    name: { type: String, required: true },
     price: { type: Number, required: true },
     quantity: { type: Number, required: true },
     feature: { type: String, required: false },
@@ -42,6 +43,14 @@ const productSchema = new mongoose.Schema({
   manufacture: {
     type: String,
     required: true,
+  },
+});
+
+productSchema.set("toJSON", {
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id.toString();
+    delete returnedObject._id;
+    delete returnedObject.__v;
   },
 });
 

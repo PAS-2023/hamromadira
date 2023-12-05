@@ -22,14 +22,26 @@ productRoute.get("/items", async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 });
+// get categories of product
+productRoute.get("/category", async (req, res) => {
+  try {
+    const result = await Product.find({}, "categoryId");
+    const categories = new Set(result.map((value) => value.categoryId));
+    res.status(200).json([...categories]);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
 
 productRoute.get("/:category", async (req, res) => {
   const category = req.params.category;
   let categoryProduct = [];
   try {
-    const result = await Product.find({ categoryId: category }, "skus");
+    const result = await Product.find({ categoryId: category });
     result.map((item) => {
-      item.skus.map((value) => categoryProduct.push(value));
+      item.skus.map((value) => {
+        categoryProduct.push(value);
+      });
     });
     res.status(200).json(categoryProduct);
   } catch (error) {
@@ -103,7 +115,6 @@ productRoute.get("/:id", async (req, res) => {
 productRoute.post("/", async (req, res) => {
   const newProduct = req.body;
   try {
-    // const newProduct = new Product({ ...productObj });
     const response = await Product.create(newProduct);
     res.status(200).json(response);
   } catch (error) {
