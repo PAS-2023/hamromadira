@@ -1,4 +1,4 @@
-POST http://localhost:3001/api/user/signup
+POST http://localhost:3001/api/user
 content-type: application/json
 
 {
@@ -9,8 +9,7 @@ content-type: application/json
     "phone":"977-1234567890",
     "address":[{"district":"Chitwan","city":"Bharatpur-11","landmark":"near gaida"}],
     "userType":"user",
-    "isDisabled":false,
-    "cart":[]
+    "isDisabled":false
 }
 
 ###
@@ -532,7 +531,7 @@ content-type: application/json
 ###
 GET http://localhost:3001/api/products
 ###
-GET http://localhost:3001/api/products/BEER
+GET http://localhost:3001/api/products/SOFT-DRINK
 
 ###
 GET http://localhost:3001/api/products/items/Absolut_Citron_1L
