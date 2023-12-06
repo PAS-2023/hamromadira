@@ -13,23 +13,19 @@ const ItemDetail = () => {
     getItemDetail(skus)
       .then((res) => {
         setProduct({ ...res });
-        console.log(res.img);
       })
       .catch((error) => console.log(error));
   }, []);
 
-  // for (let i = 0; i < product.length; i++) {
-  //   if (product[i].sku === skus) {
-  //     setItem(product[i]);
-  //   }
-  // }
-
-  const add = () => {
-    setCount(count + 1);
+  const addProd = () => {
+    if (count < product.quantity) setCount(count + 1);
   };
-  const sub = () => {
-    if (count < 2) alert("Have to have atleast 1 itme");
-    else setCount(count - 1);
+  const decreaseProd = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    } else {
+      window.alert("Please select at least one product");
+    }
   };
 
   return (
@@ -42,22 +38,22 @@ const ItemDetail = () => {
           <div className="item-description">
             <span>{product.name}</span>
             <ul className="detail-list">
-              <li>Price: {product.price}</li>
-              <li>Stock: {product.quantity}</li>
-              <li>Alcohol:{product.alcohol}%</li>
+              <li>Price: Rs.{product.price}</li>
+              <li>Stock: {product.quantity} units</li>
+              <li>Alcohol: {product.alcohol}%</li>
             </ul>
             <p className="description">{product.feature}</p>
           </div>
         </div>
 
         <div className="cart-details">
-          <h4 className="price">Rs. 1900</h4>
+          <h4 className="price">Rs. {product.price * count}</h4>
           <div className="edit-cart">
-            <button className="cart-btn" onClick={add}>
+            <button className="cart-btn" onClick={() => addProd()}>
               +
             </button>
             <span className="item-count">{count}</span>
-            <button className="cart-btn" onClick={sub}>
+            <button className="cart-btn" onClick={() => decreaseProd()}>
               -
             </button>
           </div>
