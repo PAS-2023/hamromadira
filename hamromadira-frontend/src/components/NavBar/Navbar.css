@@ -106,3 +106,16 @@ ul {
     display: none;
   }
 }
+
+.cart-count {
+  position: relative;
+  right: 12px;
+  bottom: 25px;
+  z-index: 1;
+  background-color: red;
+  border-radius: 100%;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0.2rem;
+}
