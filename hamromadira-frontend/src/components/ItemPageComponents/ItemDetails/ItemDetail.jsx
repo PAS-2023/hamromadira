@@ -55,11 +55,11 @@ const ItemDetail = () => {
           <h4 className="price">Rs: {cost}</h4>
           <div className="edit-cart">
             <button className="cart-btn" onClick={add}>
-              +
+              + |
             </button>
             <span className="item-count">{count}</span>
             <button className="cart-btn" onClick={sub}>
-              -
+              | -
             </button>
           </div>
           <div className="add-cart-btn">
