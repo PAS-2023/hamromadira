@@ -35,7 +35,11 @@ export default function NavMenu() {
         <li>
           <Link to="/cart">
             <div className="nav-link">
-              Cart <img src={cart} alt="" />
+              Cart
+              <div className="cart-icon">
+                <img src={cart} alt="" />
+                <label className="cart-count">12</label>
+              </div>
             </div>
           </Link>
         </li>
