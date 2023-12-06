@@ -10,27 +10,27 @@ const ItemDetail = () => {
   const [product, setProduct] = useState({});
 
   const [count, setCount] = useState(1);
+  const [cost, setCost] = useState(0);
   useEffect(() => {
     getItemDetail(skus)
       .then((res) => {
         setProduct({ ...res });
         console.log(res.img);
+        console.log(res.price);
+        setCost(res.price);
       })
       .catch((error) => console.log(error));
   }, []);
-
-  // for (let i = 0; i < product.length; i++) {
-  //   if (product[i].sku === skus) {
-  //     setItem(product[i]);
-  //   }
-  // }
-
   const add = () => {
     setCount(count + 1);
+    setCost(cost + product.price);
   };
   const sub = () => {
     if (count < 2) alert("Have to have atleast 1 itme");
-    else setCount(count - 1);
+    else {
+      setCount(count - 1);
+      setCost(cost - product.price);
+    }
   };
 
   return (
@@ -43,8 +43,8 @@ const ItemDetail = () => {
           <div className="item-description">
             <span>{product.name}</span>
             <ul className="detail-list">
-              <li>Price: {product.price}</li>
-              <li>Stock: {product.quantity}</li>
+              <li>Price: Rs.{product.price}</li>
+              <li>Stock: {product.quantity} Items</li>
               <li>Alcohol:{product.alcohol}%</li>
             </ul>
             <p className="description">{product.feature}</p>
@@ -52,7 +52,7 @@ const ItemDetail = () => {
         </div>
 
         <div className="cart-details">
-          <h4 className="price">Rs. 1900</h4>
+          <h4 className="price">Rs: {cost}</h4>
           <div className="edit-cart">
             <button className="cart-btn" onClick={add}>
               +
