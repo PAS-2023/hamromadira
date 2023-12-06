@@ -1,0 +1,87 @@
+.cart_settings {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+ 
+}
+.cart_setting_wrapper {
+  padding: 0.75rem;
+  width: 80%;
+  margin: auto;
+}
+.cart-btn1 > button {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  color: white;
+  font-weight: bold;
+}
+
+.bluebtn > button {
+  background-color: #8d61ff;
+}
+
+.redbtn > button {
+  background-color: #eb4949;
+}
+
+.grand-total {
+  padding: 1rem;
+  background-color: #8a8484;
+}
+.total_order > p {
+  background-color: #8a8484;
+  color: white;
+}
+
+.total_order p:nth-of-type(2) {
+  border-bottom: 1px solid white;
+}
+.table-wrapper{
+    border: 3px solid black;
+    border-radius: 1rem;
+    width: 60%;
+    margin:auto;
+    
+}
+
+th{
+    padding:10px;
+}
+
+.qty {
+  font-size: 1rem;
+  display: flex;
+  gap: 0.25rem;
+justify-content: center;
+}
+
+.qty > button {
+  border: none;
+  font-size: 1rem;
+}
+.remove-button > button{
+    border: none;
+}
+
+table{
+    margin: 0rem auto;
+    border-radius: 0.5rem;
+    border:2rem hidden  443C68;
+    border-collapse: collapse;
+    /* box-shadow: 0 0 0 1px black; */
+    overflow: hidden;
+    /* max-width: 80rem */
+}
+th,td{
+
+    min-width: 10rem;
+    padding: 1.5rem;
+    line-height: 1.7;
+
+}
+td{
+    font-size: 1rem;
+    text-align: center;
+}

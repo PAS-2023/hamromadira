@@ -23,6 +23,7 @@ const userSchema = new mongoose.Schema({
   },
   order: [{ type: mongoose.Schema.Types.ObjectId, ref: "Order" }],
   isDisabled: { type: Boolean, required: true, default: false },
+  cart: [{ type: mongoose.Schema.Types.ObjectId, ref: "Cart" }],
 });
 
 module.exports = userSchema;

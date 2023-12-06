@@ -12,7 +12,7 @@ userRoute.get("/", async (req, res) => {
   }
 });
 
-userRoute.post("/", async (req, res) => {
+userRoute.post("/signup", async (req, res) => {
   const newUser = req.body;
   if (newUser.password.length < 3) {
     return res.status(403).json({
@@ -22,7 +22,14 @@ userRoute.post("/", async (req, res) => {
   const saltRounds = 10;
   try {
     const passwordHash = await bcrypt.hash(newUser.password, saltRounds);
-    const response = await User.create({ ...newUser, password: passwordHash });
+    const response = await User.create({
+      ...newUser,
+      password: passwordHash,
+      cart: [],
+      userType: "user",
+      isDisabled: false,
+      address: [],
+    });
     res.status(200).json(response);
   } catch (error) {
     res.status(400).json({ error: error.message });

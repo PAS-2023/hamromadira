@@ -1,5 +1,8 @@
 .navbar {
-  max-width: 1440px;
+  max-width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .nav-container {
   display: flex;
