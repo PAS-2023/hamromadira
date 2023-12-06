@@ -13,8 +13,7 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<LandingPage />} />
-        <Route path="/items" element={<ItemsPage />} />
-        {/* <Route path="/cart" element={<CartPage />} /> */}
+        <Route path="/items/:skus" element={<ItemsPage />} />
       </Routes>
     </div>
   );

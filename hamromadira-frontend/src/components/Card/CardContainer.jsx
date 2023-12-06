@@ -5,6 +5,7 @@ import { Card } from "./Card";
 import "./CardContainer.css";
 import { getCategoryProducts } from "../../services/products/products";
 import productHead from "../../../public/images/productHead.png";
+import { Link } from "react-router-dom";
 
 export function CardContainer({ category }) {
   //use category call here
@@ -12,6 +13,7 @@ export function CardContainer({ category }) {
   useEffect(() => {
     getCategoryProducts(category).then((data) => setProductList([...data]));
   }, []);
+
   return (
     <>
       <div className="productPanelHead">
@@ -20,12 +22,9 @@ export function CardContainer({ category }) {
       </div>
       <div className="grid-container">
         {productList.map((product) => (
-          <Card
-            key={product.sku}
-            img={product.img}
-            name={product.name}
-            price={product.price}
-          />
+          <Link key={product.sku} to={`/items/${product.sku}`}>
+            <Card img={product.img} name={product.name} price={product.price} />
+          </Link>
         ))}
       </div>
     </>
