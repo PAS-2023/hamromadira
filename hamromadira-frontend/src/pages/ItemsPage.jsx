@@ -1,8 +1,11 @@
+import NavBar from "../components/NavBar/NavBar";
+import Footer from "../components/FooterComponents/Footer";
 export default function ItemsPage() {
   return (
     <div>
-      <h1>ItemsPage</h1>
-      This page is under construction.
+      <NavBar />
+
+      <Footer />
     </div>
   );
 }
