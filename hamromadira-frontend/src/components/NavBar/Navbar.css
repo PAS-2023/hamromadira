@@ -119,3 +119,7 @@ ul {
   font-weight: bold;
   padding: 0.2rem;
 }
+
+.logoutbtn {
+  cursor: pointer;
+}

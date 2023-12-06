@@ -4,11 +4,19 @@ import home from "../../assets/Icons/home.png";
 import cart from "../../assets/Icons/cart.svg";
 import "./Navbar.css";
 import Hamburger from "./Hamburger";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { removeUser } from "../../reducers/userReducer";
 
 export default function NavMenu() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const loggedUser = useSelector((state) => state.loggedUser);
+  const handleLogOut = () => {
+    dispatch(removeUser());
+    window.localStorage.removeItem("userData");
+    navigate("/login");
+  };
   return (
     <>
       <ul className="nav-menu">
@@ -20,17 +28,17 @@ export default function NavMenu() {
           </Link>
         </li>
         <li>
-          <Link to="/login">
-            {loggedUser.length ? (
-              <div className="nav-link">
-                Login <img src={logout} alt="" />
-              </div>
-            ) : (
+          {loggedUser.length ? (
+            <div className="nav-link logoutbtn" onClick={handleLogOut}>
+              Logout <img src={logout} alt="" />
+            </div>
+          ) : (
+            <Link to="/login">
               <div className="nav-link">
                 Login <img src={login} alt="" />
               </div>
-            )}
-          </Link>
+            </Link>
+          )}
         </li>
         <li>
           <Link to="/cart">
