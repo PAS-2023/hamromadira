@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./CardContainer.css";
 
-export const Card = ({ img, name, price }) => {
+const Card = ({ img, name, price }) => {
   return (
     <div className="grid-items">
       <div>
@@ -17,3 +17,5 @@ export const Card = ({ img, name, price }) => {
     </div>
   );
 };
+
+export default Card;

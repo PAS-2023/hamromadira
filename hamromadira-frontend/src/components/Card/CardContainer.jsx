@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { Card } from "./Card";
+import Card from "./Card";
 import "./CardContainer.css";
 import { getCategoryProducts } from "../../services/products/products";
 import { Link } from "react-router-dom";
 
-export function CardContainer({ category }) {
+const CardContainer = ({ category }) => {
   //use category call here
   const [productList, setProductList] = useState([]);
   useEffect(() => {
@@ -28,4 +28,5 @@ export function CardContainer({ category }) {
       </div>
     </>
   );
-}
+};
+export default CardContainer;
