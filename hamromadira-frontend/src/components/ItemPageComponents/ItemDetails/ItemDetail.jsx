@@ -1,5 +1,5 @@
 import "./itemDetail.css";
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getItemDetail } from "../../../services/products/products";
