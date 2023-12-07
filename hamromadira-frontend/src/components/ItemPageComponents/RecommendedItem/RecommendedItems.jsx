@@ -2,7 +2,7 @@ import Slider from "../../Slider/Slider";
 const RecommendedItems = () => {
   return (
     <>
-      <Slider />{" "}
+      <Slider />
     </>
   );
 };
