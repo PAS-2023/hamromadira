@@ -28,6 +28,8 @@ GET http://localhost:3001/api/user
 ###
 GET http://localhost:3001/api/products/category
 ###
+GET http://localhost:3001/api/products/recommended/Nepal_Ice_Strong_500ML_x_12_Cans
+###
 POST http://localhost:3001/api/products
 content-type: application/json
 

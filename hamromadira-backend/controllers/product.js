@@ -33,6 +33,19 @@ productRoute.get("/category", async (req, res) => {
   }
 });
 
+// recommended items api
+productRoute.get("/recommended/:skus", async (req, res) => {
+  const sku = req.params.skus;
+  const searchItem = sku.split("_")[0];
+  const regexPattern = new RegExp(searchItem, "i");
+  try {
+    const result = await Product.find({ productName: regexPattern });
+    res.status(200).json(result[0].skus);
+  } catch (error) {
+    res.status(400).json({ error });
+  }
+});
+//get product categorywise
 productRoute.get("/:category", async (req, res) => {
   const category = req.params.category;
   let categoryProduct = [];
@@ -49,6 +62,7 @@ productRoute.get("/:category", async (req, res) => {
   }
 });
 
+//get detail about particular product
 productRoute.get("/items/:sku", async (req, res) => {
   const itemId = req.params.sku;
   const getItem = itemId.split("_")[0];
@@ -67,6 +81,7 @@ productRoute.get("/items/:sku", async (req, res) => {
   }
 });
 
+// update particular product
 productRoute.put("/items/:sku", async (req, res) => {
   const itemId = req.params.sku;
   const getItem = itemId.split("_")[0];
@@ -112,6 +127,7 @@ productRoute.get("/:id", async (req, res) => {
   }
 });
 
+// create new product
 productRoute.post("/", async (req, res) => {
   const newProduct = req.body;
   try {
