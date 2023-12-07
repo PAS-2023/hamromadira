@@ -1,5 +1,4 @@
 import "./itemDetail.css";
-
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getItemDetail } from "../../../services/products/products";
@@ -15,6 +14,7 @@ const ItemDetail = () => {
     getItemDetail(skus)
       .then((res) => {
         setProduct({ ...res });
+
         console.log(res.img);
         console.log(res.price);
         setCost(res.price);
