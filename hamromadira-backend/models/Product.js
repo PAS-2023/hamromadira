@@ -13,6 +13,22 @@ const stockSchema = new mongoose.Schema(
   { _id: false }
 );
 
+const cartListSchema = new mongoose.Schema(
+  {
+    skus: { type: String, required: false },
+    price: { type: Number, required: false },
+    quantity: { type: Number, required: false },
+  },
+  { _id: false }
+);
+
+const cartSchema = new mongoose.Schema(
+  {
+    prodList: [cartListSchema],
+  },
+  { _id: false }
+);
+
 const productSchema = new mongoose.Schema({
   productName: {
     type: String,
@@ -40,6 +56,7 @@ const productSchema = new mongoose.Schema({
     required: true,
   },
   skus: [stockSchema],
+  cart: { type: cartSchema, required: true },
   manufacture: {
     type: String,
     required: true,
