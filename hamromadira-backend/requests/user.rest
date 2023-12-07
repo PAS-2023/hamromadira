@@ -1,16 +1,27 @@
-POST http://localhost:3001/api/user
+POST http://localhost:3001/api/user/signup
 content-type: application/json
 
 {
-    "fullname":"Alex Romanov",
-    "username":"alex123",
-    "password":"password123",
-    "email":"alexr@gmail.com",
+    "fullname":"Prabesh Magar",
+    "username":"admin",
+    "password":"admin",
+    "email":"admin@gmail.com",
     "phone":"977-1234567890",
-    "address":[{"district":"Chitwan","city":"Bharatpur-11","landmark":"near gaida"}],
+    "address":[],
     "userType":"user",
-    "isDisabled":false
+    "isDisabled":false,
+    "cart":[]
 }
+###
+GET http://localhost:3001/api/cart/65721434e71c03fd46ebc36b
+
+###
+DELETE  http://localhost:3001/api/cart/remove/65721434e71c03fd46ebc36b
+content-type: application/json
+
+
+{"skus":"Fanta_2.25L"}
+# {"skus":"Absolut_Juice_Strawberry_Edition_500ML","price":1290,"quantity":12}
 
 ###
 GET http://localhost:3001/api/user
