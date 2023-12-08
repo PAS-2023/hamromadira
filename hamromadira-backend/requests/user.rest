@@ -16,12 +16,17 @@ content-type: application/json
 GET http://localhost:3001/api/cart/65721434e71c03fd46ebc36b
 
 ###
-DELETE  http://localhost:3001/api/cart/remove/65721434e71c03fd46ebc36b
+DELETE http://localhost:3001/api/cart/remove/65721434e71c03fd46ebc36b
 content-type: application/json
 
 
-{"skus":"Fanta_2.25L"}
-# {"skus":"Absolut_Juice_Strawberry_Edition_500ML","price":1290,"quantity":12}
+{"skus":"Absolut_Peppar_1L"}
+###
+PUT http://localhost:3001/api/cart/65721434e71c03fd46ebc36b
+content-type: application/json
+
+
+{"skus":"Gorkha_Strong_650ML_x_12_Bottles","name":"Absolut Peppar 1L","price":"1150","quantity":190}
 
 ###
 GET http://localhost:3001/api/user
