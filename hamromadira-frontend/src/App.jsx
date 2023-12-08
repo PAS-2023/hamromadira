@@ -8,6 +8,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./reducers/userReducer";
+import CheckOutPage from "./pages/CheckOutPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/checkout" element={<CheckOutPage />} />
         <Route path="/items/:skus" element={<ItemsPage />} />
         {/* <Route path="/cart" element={<CartPage />} /> */}
 

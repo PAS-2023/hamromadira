@@ -1,22 +1,60 @@
 const cartRoute = require("express").Router();
-const { Cart } = require("../models/index");
+const { User } = require("../models/index");
 
-cartRoute.get("/", async (req, res) => {
+cartRoute.get("/:userId", async (req, res) => {
+  const userId = req.params.userId;
   try {
-    const response = await Cart.find({});
-    res.status(200).json(response);
+    const result = await User.findById(userId, "cart");
+    res.status(200).json(result.cart);
   } catch (error) {
-    res.status(400).json({ error });
+    res.status(400).json(error);
   }
 });
 
-cartRoute.post("/", async (req, res) => {
-  const newCart = req.body;
+cartRoute.put("/:userid", async (req, res) => {
+  const userId = req.params.userid;
+  const cartProd = req.body;
   try {
-    const response = await Cart.create(newCart);
-    res.status(200).json(response);
+    const result = await User.findByIdAndUpdate(
+      userId,
+      {
+        $push: { cart: cartProd },
+      },
+      { new: true }
+    );
+    res.status(200).json(result);
   } catch (error) {
-    res.status(200).json({ error });
+    res.status(400).json(error);
+  }
+});
+
+cartRoute.put("/edit/:userid", async (req, res) => {
+  const userId = req.params.userid;
+  const { prodCount, skus } = req.body;
+  try {
+    const result = await User.updateOne(
+      { _id: userId, "cart.skus": skus },
+      { $set: { "cart.$.quantity": prodCount } }
+    );
+
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
+cartRoute.delete("/remove/:userid", async (req, res) => {
+  const userId = req.params.userid;
+  const { skus } = req.body;
+  try {
+    const result = await User.updateOne(
+      { _id: userId },
+      { $pull: { cart: { skus: skus } } },
+      { new: true }
+    );
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(400).json(error);
   }
 });
 

@@ -9,12 +9,23 @@ const addressSchema = new mongoose.Schema(
   { _id: false }
 );
 
+const cartListSchema = new mongoose.Schema(
+  {
+    skus: { type: String, required: true },
+    name: { type: String, required: true },
+    price: { type: Number, required: true },
+    quantity: { type: Number, required: true },
+  },
+  { _id: false }
+);
+
 const userSchema = new mongoose.Schema({
   fullname: { type: String, required: true, minLength: 3 },
   username: { type: String, required: true, minLength: 3 },
   password: { type: String, required: true },
   email: { type: String, required: true },
   phone: { type: String, required: true },
+  cart: [cartListSchema],
   address: [addressSchema],
   userType: {
     type: String,
@@ -23,7 +34,6 @@ const userSchema = new mongoose.Schema({
   },
   order: [{ type: mongoose.Schema.Types.ObjectId, ref: "Order" }],
   isDisabled: { type: Boolean, required: true, default: false },
-  cart: [{ type: mongoose.Schema.Types.ObjectId, ref: "Cart" }],
 });
 
 module.exports = userSchema;
