@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CardContainer } from "../Card/CardContainer";
+import CardContainer from "../Card/CardContainer";
 import { getCategoryList } from "../../services/products/products";
 
 export default function ItemPanel() {

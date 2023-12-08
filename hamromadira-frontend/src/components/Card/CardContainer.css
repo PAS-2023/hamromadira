@@ -5,6 +5,7 @@
 }
 
 .detail-list-2 {
+  background-color: #f0ecec;
   display: flex;
   flex-direction: column;
   gap: 0rem;
@@ -34,12 +35,13 @@ hr {
 }
 .grid-items {
   border: 1px solid grey;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
+  background-color: #f0ecec;
 }
 
 .productPanelHead {
@@ -51,4 +53,15 @@ hr {
 
 .prodName {
   text-align: center;
+  background-color: #f0ecec;
+}
+.prodPrice {
+  background-color: #f0ecec;
+}
+.div-img {
+  background-color: #f0ecec;
+  border-radius: 20px;
+}
+img {
+  border-radius: 10px;
 }
