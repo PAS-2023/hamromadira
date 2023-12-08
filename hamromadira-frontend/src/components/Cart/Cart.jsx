@@ -1,15 +1,13 @@
-// import CartItem from "./CartItem";
-// import CartSetting from "./CartSetting";
-// import TopProduct from "../TopProducts/TopProduct";
+import CartItem from "./CartItem";
+import CartSetting from "./CartSetting";
 
-// const Cart = () => {
-//   return (
-//     <div>
-//       <CartItem />
-//       <CartSetting />
-//       <TopProduct />
-//     </div>
-//   );
-// };
+const Cart = () => {
+  return (
+    <div>
+      <CartItem />
+      <CartSetting />
+    </div>
+  );
+};
 
-// export default Cart;
+export default Cart;

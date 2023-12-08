@@ -1,5 +1,4 @@
-
-import "./cart.css"
+import "./cart.css";
 
 const CartSetting = () => {
   return (
@@ -23,6 +22,6 @@ const CartSetting = () => {
       </div>
     </div>
   );
-}
+};
 
-export default CartSetting
+export default CartSetting;
