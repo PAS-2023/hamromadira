@@ -20,10 +20,13 @@ const ItemDetail = () => {
         setCost(res.price);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [skus]);
   const add = () => {
-    setCount(count + 1);
-    setCost(cost + product.price);
+    if (count > product.quantity - 1) alert("Out of Stuck");
+    else {
+      setCount(count + 1);
+      setCost(cost + product.price);
+    }
   };
   const sub = () => {
     if (count < 2) alert("Have to have atleast 1 itme");
@@ -44,7 +47,7 @@ const ItemDetail = () => {
             <span>{product.name}</span>
             <ul className="detail-list">
               <li>Price: Rs.{product.price}</li>
-              <li>Stock: {product.quantity} Items</li>
+              <li>Stock: {product.quantity} units</li>
               <li>Alcohol:{product.alcohol}%</li>
             </ul>
             <p className="description">{product.feature}</p>

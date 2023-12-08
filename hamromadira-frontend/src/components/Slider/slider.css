@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 .container {
+  margin-top: 0%;
   margin-bottom: 10px;
 }
 .images {
@@ -28,9 +29,15 @@
   /* position: absolute; */
 }
 .sb {
-  border-radius: 2mm;
-  height: 1.5rem;
+  height: 2rem;
   width: 5rem;
+
+  border: none;
+  padding: 0.4rem;
+  border-radius: 10px;
+  color: white;
+  background-color: #8d61ff;
+  margin: 0.5rem;
 }
 .sbc {
   display: flex;
