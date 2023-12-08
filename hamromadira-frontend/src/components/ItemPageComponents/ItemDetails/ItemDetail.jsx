@@ -9,7 +9,7 @@ const ItemDetail = () => {
   const [product, setProduct] = useState({});
 
   const [count, setCount] = useState(1);
-  const [cost, setCost] = useState(0);
+  // const [cost, setCost] = useState(0);
   useEffect(() => {
     getItemDetail(skus)
       .then((res) => {
@@ -17,7 +17,7 @@ const ItemDetail = () => {
 
         console.log(res.img);
         console.log(res.price);
-        setCost(res.price);
+        // setCost(res.price);
       })
       .catch((error) => console.log(error));
   }, [skus]);
@@ -25,14 +25,14 @@ const ItemDetail = () => {
     if (count > product.quantity - 1) alert("Out of Stuck");
     else {
       setCount(count + 1);
-      setCost(cost + product.price);
+      // setCost(cost + product.price);
     }
   };
   const sub = () => {
     if (count < 2) alert("Have to have atleast 1 itme");
     else {
       setCount(count - 1);
-      setCost(cost - product.price);
+      // setCost(cost - product.price);
     }
   };
 
@@ -55,7 +55,7 @@ const ItemDetail = () => {
         </div>
 
         <div className="cart-details">
-          <h4 className="price">Rs: {cost}</h4>
+          <h4 className="price">Rs: {product.price * count}</h4>
           <div className="edit-cart">
             <button className="cart-btn" onClick={add}>
               + |

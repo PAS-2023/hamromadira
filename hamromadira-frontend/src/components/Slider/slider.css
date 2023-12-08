@@ -9,7 +9,7 @@
 }
 .images {
   margin-left: 1%;
-
+  border-radius: 10px;
   max-width: 98%;
   padding: 10px;
   display: flex;
