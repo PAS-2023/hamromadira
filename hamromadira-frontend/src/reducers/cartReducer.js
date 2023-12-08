@@ -39,10 +39,17 @@ export const initializeCart = (userId) => {
   };
 };
 
-export const editItemsToCart = (userId, item) => {
+export const addItemsToCart = (userId, item) => {
   return async (dispatch) => {
     const response = await editCart(userId, item);
     dispatch(appendItem(response));
+  };
+};
+
+export const editItemsToCart = (userId, item) => {
+  return async (dispatch) => {
+    const response = await editCart(userId, item);
+    dispatch(editCartItems(response));
   };
 };
 
@@ -53,5 +60,11 @@ export const removeCartItem = (userId, skus) => {
   };
 };
 
-export const { setCartItems, appendItem, removeItem } = cartSlice.actions;
+export const {
+  setCartItems,
+  appendItem,
+  removeItem,
+  cartCount,
+  editCartItems,
+} = cartSlice.actions;
 export default cartSlice.reducer;
