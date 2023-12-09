@@ -1,3 +1,14 @@
+import PaymentMenu from "./PaymentMenu";
+import PaymentMethod from "./PaymentMethod";
+
 export default function PaymentPanel() {
-  return <div>PaymentPanel</div>;
+  return (
+    <>
+      <PaymentMenu />
+      
+      <div className="payment-wrapper">
+        <PaymentMethod />
+      </div>
+    </>
+  );
 }

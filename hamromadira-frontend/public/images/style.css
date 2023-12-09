@@ -52,9 +52,9 @@ ul {
   gap: 10px;
 }
 
-.navbar {
+/* .navbar {
   max-width: 1440px;
-}
+} */
 
 .nav-searchbar input {
   border: none;

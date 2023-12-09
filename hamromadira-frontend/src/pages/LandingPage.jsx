@@ -6,14 +6,23 @@ import Brand from "../components/Brand/Brand";
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/FooterComponents/Footer";
 import ItemPanel from "../components/ItemsPanel/ItemPanel";
+// import PaymentMenu from "../components/CheckoutComponents/paymentMenu";
+import PaymentMenu from "../components/CheckoutComponents/PaymentMenu";
+import PaymentPanel from "../components/CheckoutComponents/PaymentPanel";
+import AddressPanel from "../components/CheckoutComponents/AddressPanel";
 
 function LandingPage() {
   return (
     <>
       <NavBar />
-      <AdSlider />
+      {/* <AdSlider /> */}
       {/* <TopProduct /> */}
-      <ItemPanel />
+      {/* <ItemPanel /> */}
+      {/* <PaymentMenu /> */}
+
+      <AddressPanel />
+      <PaymentPanel />
+      {/* <h2>hi akash</h2> */}
       <Footer />
     </>
   );

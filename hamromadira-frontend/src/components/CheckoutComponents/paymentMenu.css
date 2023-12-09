@@ -1,0 +1,170 @@
+.payment-wrapper {
+  border: 3px solid #8a8484;
+  width: 50%;
+  margin: auto;
+  margin-top: 1rem;
+  border-radius: 0.51rem;
+  margin-bottom: 2rem;
+}
+.payment-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 22rem;
+  margin: auto;
+    margin-top: 1rem;
+  justify-content: center;
+  width: 50%;
+  height: 3rem;
+  border-radius: 0.5rem;
+}
+.underline {
+  width: 100%;
+}
+.back-button {
+  margin-top: 2px;
+  height: 40px;
+}
+.total {
+  font-size: 2rem;
+  margin-top: 2px;
+}
+.radio {
+  display: flex;
+  flex-direction: row;
+  gap: 11rem;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.e-sewa {
+  margin-left: 2rem;
+  margin-top: -2.5rem;
+}
+.form-container-esewa {
+  border: 3px solid #17a42e;
+  width: 30%;
+  border-radius: 0.5rem;
+  margin: auto;
+  color: #17a42e;
+}
+.form-container-khalti {
+  border: 3px solid #5c2e91;
+  color: #5c2e91;
+  width: 30%;
+  border-radius: 0.5rem;
+  margin: auto;
+}
+.form-container-cod {
+  border: 3px solid #129dde;
+  color: #129dde;
+  width: 30%;
+  border-radius: 0.5rem;
+  margin: auto;
+}
+.ph-box{
+  height: 2rem;
+  border-radius: 0.3rem;
+}
+.form1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0, 5rem;
+  padding: 1rem;
+  align-items: flex-start;
+}
+.payment-title-cod {
+  margin: auto;
+  color: #129dde;
+}
+.payment-title-khalti {
+  margin: auto;
+  color: #5c2e91;
+}
+.payment-title-esewa {
+  margin: auto;
+  color: #17a42e;
+}
+.wrapper {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.payment-btn,
+button {
+  height: 2rem;
+  border-radius: 0.3rem;
+  color: white;
+  padding-top: 3px;
+  margin: auto;
+  margin-top: 0.4rem;
+  border: none;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.addform-btn > button {
+  background-color: #8d61ff;
+  font-size: 15px;
+  width: 3rem;
+  height: 1.5rem;
+  margin-left: 6rem;
+}
+.payment-btn > button {
+  background-color: #8d61ff;
+  width: 10rem;
+}
+
+.address-box {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+}
+.addressForm-wrapper {
+  border: 2px solid black;
+  display: flex;
+  width: 25%;
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+ 
+}
+.address-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.add-address-wrapper {
+  border: 2px solid black;
+  width: 25%;
+  /* height: 12rem; */
+  border-radius: 0.4rem;
+}
+
+.add-address > h2 {
+  font-size: 3rem;
+  color: gray;
+  margin-left: 5rem;
+  margin-top: 2rem;
+}
+.add-address > h3 {
+  font-size: 1rem;
+  margin-left: 3rem;
+}
+.address-wrapper {
+   border: 3px solid #8a8484;
+  width:51%;
+  height: 15rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  padding:1.3rem;;
+  justify-content:center;
+  margin: auto;
+}

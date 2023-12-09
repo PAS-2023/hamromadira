@@ -53,10 +53,10 @@ ul {
   justify-content: space-between;
   gap: 10px;
 }
-
+/* 
 .navbar {
   max-width: 1440px;
-}
+} */
 
 .nav-searchbar input {
   border: none;
