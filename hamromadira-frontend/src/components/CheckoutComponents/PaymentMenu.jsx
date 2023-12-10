@@ -1,17 +1,22 @@
-import React from "react";
 import "./paymentMenu.css";
+import { useNavigate } from "react-router-dom";
 
 const PaymentMenu = () => {
+  const navigate = useNavigate();
+  const goToCart = () => {
+    navigate("/cart");
+  };
   return (
     <>
       <div className="payment-menu">
         <img
           className="back-button"
           src="images/back-to-cart.png"
-          alt="buttton "
+          alt="buttton"
+          onClick={goToCart}
         />
         <div className="total">
-          <span>Total:RS1200</span>
+          <span>Total:Rs.{window.sessionStorage.getItem("cartTotal")}</span>
         </div>
       </div>
     </>

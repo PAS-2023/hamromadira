@@ -2,7 +2,7 @@ import "./ItemDetail.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getItemDetail } from "../../../services/products/products";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItemsToCart } from "../../../reducers/cartReducer";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +12,7 @@ const ItemDetail = () => {
   const [product, setProduct] = useState({});
   const navigate = useNavigate();
   const [count, setCount] = useState(1);
-
+  const loggedUser = useSelector((state) => state.loggedUser);
   useEffect(() => {
     getItemDetail(skus)
       .then((res) => {
@@ -28,15 +28,19 @@ const ItemDetail = () => {
     }
   };
   const addToCart = () => {
-    dispatch(
-      addItemsToCart({
-        name: product.name,
-        price: product.price,
-        skus: product.sku,
-        quantity: count,
-      })
-    );
-    navigate("/cart");
+    if (loggedUser.length) {
+      dispatch(
+        addItemsToCart({
+          name: product.name,
+          price: product.price,
+          skus: product.sku,
+          quantity: count,
+        })
+      );
+      navigate("/cart");
+    } else {
+      navigate("/login");
+    }
   };
   const sub = () => {
     if (count < 2) alert("Have to have atleast 1 itme");

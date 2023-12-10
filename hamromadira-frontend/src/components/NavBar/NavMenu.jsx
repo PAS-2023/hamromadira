@@ -15,6 +15,7 @@ export default function NavMenu() {
   let cartItems = useSelector((state) => state.cart);
   const handleLogOut = () => {
     dispatch(removeUser());
+    window.sessionStorage.clear();
     window.localStorage.removeItem("userData");
     navigate("/login");
   };
@@ -31,7 +32,7 @@ export default function NavMenu() {
         <li>
           {loggedUser.length ? (
             <div className="nav-link logoutbtn" onClick={handleLogOut}>
-              Logout <img src={logout} alt="" />
+              {loggedUser[0].username} <img src={logout} alt="" />
             </div>
           ) : (
             <Link to="/login">

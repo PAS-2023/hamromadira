@@ -7,6 +7,7 @@
   margin-bottom: 2rem;
 }
 .payment-menu {
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   gap: 22rem;
@@ -25,7 +26,7 @@
   height: 40px;
 }
 .total {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-top: 2px;
 }
 .radio {

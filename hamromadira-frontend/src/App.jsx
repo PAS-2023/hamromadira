@@ -22,14 +22,28 @@ function App() {
     }
   }, []);
   const loggedUser = useSelector((state) => state.loggedUser);
+  console.log(loggedUser.length);
   return (
     <div>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/checkout" element={<CheckOutPage />} />
         <Route path="/items/:skus" element={<ItemsPage />} />
-        <Route path="/cart" element={<CartPage />} />
-
+        <Route
+          path="/cart"
+          element={
+            loggedUser.length ? <CartPage /> : <Navigate replace to="/login" />
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            loggedUser.length ? (
+              <CheckOutPage />
+            ) : (
+              <Navigate replace to="/login" />
+            )
+          }
+        />
         <Route
           path="/signup"
           element={

@@ -1,19 +1,21 @@
-import React from 'react'
-import AddressDisplay from './AddressDisplay'
-import AddressForm from './AddressForm'
-import AddAddress from './AddAddress'
+import AddressDisplay from "./AddressDisplay";
+import AddressForm from "./AddressForm";
+import AddAddress from "./AddAddress";
 import "./paymentMenu.css";
 
 const AdressWrapper = () => {
+  const addressList = [
+    { district: "Chitwan", city: "Bharatpur", Landmark: "near Campus" },
+  ];
   return (
-  
-      <div className="address-wrapper">
-        <AddressDisplay />
-        <AddressForm />
-        <AddAddress />
-      </div>
-    
+    <div className="address-wrapper">
+      {addressList.map((value) => (
+        <AddressDisplay key={value.Landmark} value={value} />
+      ))}
+      <AddressForm />
+      <AddAddress />
+    </div>
   );
-}
+};
 
-export default AdressWrapper
+export default AdressWrapper;

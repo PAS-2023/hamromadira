@@ -1,18 +1,17 @@
-import React from "react";
 import "./paymentMenu.css";
 
-const AddressDisplay = () => {
+const AddressDisplay = (value) => {
   return (
     <>
       <div className="address-box">
         <div className="district">
-          <span>District : Nawalpur</span>
+          <span>District : {value.value.district}</span>
         </div>
         <div className="city">
-          <span>City : Bharatpur</span>
+          <span>City : {value.value.city}</span>
         </div>
         <div className="landmark">
-          <span>LandMark : Near Bhatbhateni</span>
+          <span>LandMark : {value.value.Landmark}</span>
         </div>
         <div className="addform-btn">
           <button>Edit</button>
