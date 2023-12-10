@@ -2,29 +2,47 @@ import "./ItemDetail.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getItemDetail } from "../../../services/products/products";
+import { useDispatch } from "react-redux";
+import { addItemsToCart } from "../../../reducers/cartReducer";
+import { useNavigate } from "react-router-dom";
 
 const ItemDetail = () => {
   const { skus } = useParams();
-  console.log("this is sku", skus);
+  const dispatch = useDispatch();
   const [product, setProduct] = useState({});
-
+  const navigate = useNavigate();
   const [count, setCount] = useState(1);
+
   useEffect(() => {
     getItemDetail(skus)
       .then((res) => {
         setProduct({ ...res });
       })
       .catch((error) => console.log(error));
-  }, []);
-
-  const addProd = () => {
-    if (count < product.quantity) setCount(count + 1);
+  }, [skus]);
+  const add = () => {
+    if (count > product.quantity - 1) alert("Out of Stuck");
+    else {
+      setCount(count + 1);
+      // setCost(cost + product.price);
+    }
   };
-  const decreaseProd = () => {
-    if (count > 1) {
+  const addToCart = () => {
+    dispatch(
+      addItemsToCart({
+        name: product.name,
+        price: product.price,
+        skus: product.sku,
+        quantity: count,
+      })
+    );
+    navigate("/cart");
+  };
+  const sub = () => {
+    if (count < 2) alert("Have to have atleast 1 itme");
+    else {
       setCount(count - 1);
-    } else {
-      window.alert("Please select at least one product");
+      // setCost(cost - product.price);
     }
   };
 
@@ -40,25 +58,25 @@ const ItemDetail = () => {
             <ul className="detail-list">
               <li>Price: Rs.{product.price}</li>
               <li>Stock: {product.quantity} units</li>
-              <li>Alcohol: {product.alcohol}%</li>
+              <li>Alcohol:{product.alcohol}%</li>
             </ul>
             <p className="description">{product.feature}</p>
           </div>
         </div>
 
         <div className="cart-details">
-          <h4 className="price">Rs. {product.price * count}</h4>
+          <h4 className="price">Rs: {product.price * count}</h4>
           <div className="edit-cart">
-            <button className="cart-btn" onClick={() => addProd()}>
-              +
+            <button className="cart-btn" onClick={add}>
+              + |
             </button>
             <span className="item-count">{count}</span>
-            <button className="cart-btn" onClick={() => decreaseProd()}>
-              -
+            <button className="cart-btn" onClick={sub}>
+              | -
             </button>
           </div>
           <div className="add-cart-btn">
-            <button>Add to Cart</button>
+            <button onClick={addToCart}>Add to Cart</button>
           </div>
         </div>
       </div>

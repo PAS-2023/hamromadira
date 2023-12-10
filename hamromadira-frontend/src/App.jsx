@@ -3,12 +3,13 @@ import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import LandingPage from "./pages/LandingPage";
 import ItemsPage from "./pages/ItemsPage";
-// import CartPage from "./pages/CartPage";
+import CartPage from "./pages/CartPage";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./reducers/userReducer";
 import CheckOutPage from "./pages/CheckOutPage";
+import { initializeCart } from "./reducers/cartReducer";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +17,8 @@ function App() {
     let data = window.localStorage.getItem("userData");
     data = JSON.parse(data);
     if (data) {
-      dispatch(setUser(data.username));
+      dispatch(initializeCart());
+      dispatch(setUser(data));
     }
   }, []);
   const loggedUser = useSelector((state) => state.loggedUser);
@@ -26,7 +28,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/checkout" element={<CheckOutPage />} />
         <Route path="/items/:skus" element={<ItemsPage />} />
-        {/* <Route path="/cart" element={<CartPage />} /> */}
+        <Route path="/cart" element={<CartPage />} />
 
         <Route
           path="/signup"

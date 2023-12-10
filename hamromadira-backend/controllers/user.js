@@ -25,10 +25,10 @@ userRoute.post("/signup", async (req, res) => {
     const response = await User.create({
       ...newUser,
       password: passwordHash,
-      cart: [],
       userType: "user",
       isDisabled: false,
       address: [],
+      cart: [],
     });
     res.status(200).json(response);
   } catch (error) {
