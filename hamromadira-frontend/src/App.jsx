@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./reducers/userReducer";
 import CheckOutPage from "./pages/CheckOutPage";
+import { initializeCart } from "./reducers/cartReducer";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +17,8 @@ function App() {
     let data = window.localStorage.getItem("userData");
     data = JSON.parse(data);
     if (data) {
-      dispatch(setUser(data.username));
+      dispatch(initializeCart());
+      dispatch(setUser(data));
     }
   }, []);
   const loggedUser = useSelector((state) => state.loggedUser);

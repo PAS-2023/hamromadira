@@ -1,6 +1,21 @@
 import "./cart.css";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 const CartSetting = () => {
+  let [subtotal, setSubTotal] = useState(0);
+  let cartDetails = useSelector((state) => state.cart);
+  useEffect(() => {
+    const val = cartDetails.reduce(
+      (acc, item) => acc + item.quantity * item.price,
+      0
+    );
+    setSubTotal(val);
+  }, [cartDetails]);
+  const handleCartClear = () => {
+    alert("cartclear");
+    // dispatch(removeAllCartItems());
+  };
   return (
     <div>
       <div className="cart_setting_wrapper">
@@ -10,13 +25,13 @@ const CartSetting = () => {
           </div>
           <div className="grand-total">
             <div className="total_order">
-              <p>sub-total: Rs.3780</p>
+              <p>sub-total: Rs. {subtotal}</p>
               <p>Delivery Cost: Rs.87 </p>
-              <p>Order total: Rs. 4590</p>
+              <p>Order total: Rs. {subtotal + 87}</p>
             </div>
           </div>
           <div className="cart-btn1 redbtn">
-            <button>Clear Cart</button>
+            <button onClick={handleCartClear}>Clear Cart</button>
           </div>
         </div>
       </div>

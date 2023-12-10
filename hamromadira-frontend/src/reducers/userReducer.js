@@ -7,6 +7,9 @@ const loggedUserSlice = createSlice({
     setUser(state, action) {
       return state.concat(action.payload);
     },
+    getUser(state, action) {
+      return state;
+    },
     // eslint-disable-next-line no-unused-vars
     removeUser(state, action) {
       return [];
@@ -14,5 +17,5 @@ const loggedUserSlice = createSlice({
   },
 });
 
-export const { setUser, removeUser } = loggedUserSlice.actions;
+export const { setUser, removeUser, getUser } = loggedUserSlice.actions;
 export default loggedUserSlice.reducer;
