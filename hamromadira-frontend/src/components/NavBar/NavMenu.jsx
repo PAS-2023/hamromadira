@@ -12,6 +12,7 @@ export default function NavMenu() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const loggedUser = useSelector((state) => state.loggedUser);
+  let cartItems = useSelector((state) => state.cart);
   const handleLogOut = () => {
     dispatch(removeUser());
     window.localStorage.removeItem("userData");
@@ -46,7 +47,7 @@ export default function NavMenu() {
               Cart
               <div className="cart-icon">
                 <img src={cart} alt="" />
-                <label className="cart-count">12</label>
+                <label className="cart-count">{cartItems.length}</label>
               </div>
             </div>
           </Link>

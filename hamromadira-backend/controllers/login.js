@@ -20,9 +20,7 @@ loginRoute.post("/", async (req, res) => {
             userType: user.userType,
             isDisabled: user.isDisabled,
           };
-          const token = jwt.sign(userDetails, SECRET_KEY, {
-            expiresIn: "45m",
-          });
+          const token = jwt.sign(userDetails, SECRET_KEY);
           return res.status(200).json({ token, username: user.username });
         }
         return res.status(401).json({ error: "not authorized" });

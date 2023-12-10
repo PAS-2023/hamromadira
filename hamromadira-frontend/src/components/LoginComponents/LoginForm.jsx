@@ -6,6 +6,7 @@ import { loginService } from "../../services/userAccess/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../reducers/userReducer";
+import { initializeCart } from "../../reducers/cartReducer";
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -22,8 +23,9 @@ export default function LoginForm() {
     if (userCredentials.username && userCredentials.password) {
       loginService(userCredentials)
         .then((result) => {
-          dispatch(setUser(result.username));
+          dispatch(setUser(result));
           window.localStorage.setItem("userData", JSON.stringify(result));
+          dispatch(initializeCart());
           navigate("/");
         })
         .catch((err) => console.log(err));

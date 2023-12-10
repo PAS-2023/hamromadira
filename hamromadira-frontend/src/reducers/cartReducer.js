@@ -4,6 +4,7 @@ import {
   getCartDetail,
   editCart,
   deleteCartItems,
+  emptyCart,
 } from "../services/carts/cart";
 
 const cartSlice = createSlice({
@@ -18,45 +19,49 @@ const cartSlice = createSlice({
     },
     editCartItems(state, action) {
       return state.map((item) =>
-        item.skus === action.payload.skus
-          ? item.quantity === action.payload.quantity
-          : item
+        item.skus === action.payload.skus ? action.payload : item
       );
     },
     removeItem(state, action) {
       return state.filter((item) => item.skus !== action.payload.skus);
     },
-    cartCount(state, action) {
-      return state.length;
+    clearCart(state, action) {
+      return action.payload;
     },
   },
 });
 
-export const initializeCart = (userId) => {
+export const initializeCart = () => {
   return async (dispatch) => {
-    const cartDetail = await getCartDetail(userId);
+    const cartDetail = await getCartDetail();
     dispatch(setCartItems(cartDetail));
   };
 };
 
-export const addItemsToCart = (userId, item) => {
+export const addItemsToCart = (item) => {
   return async (dispatch) => {
-    const response = await editCart(userId, item);
+    const response = await editCart(item);
     dispatch(appendItem(response));
   };
 };
 
-export const editItemsToCart = (userId, item) => {
+export const editItemsToCart = (cartProd) => {
   return async (dispatch) => {
-    const response = await editCart(userId, item);
+    const response = await editCart(cartProd);
     dispatch(editCartItems(response));
   };
 };
 
-export const removeCartItem = (userId, skus) => {
+export const removeCartItem = (skus) => {
   return async (dispatch) => {
     const response = await deleteCartItems(skus);
     dispatch(removeItem(response));
+  };
+};
+export const removeAllCartItems = () => {
+  return async (dispatch) => {
+    const response = await emptyCart();
+    dispatch(clearCart(response));
   };
 };
 
@@ -64,7 +69,8 @@ export const {
   setCartItems,
   appendItem,
   removeItem,
-  cartCount,
   editCartItems,
+  clearCart,
+  calcTotal,
 } = cartSlice.actions;
 export default cartSlice.reducer;
