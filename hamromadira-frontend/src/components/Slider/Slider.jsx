@@ -52,6 +52,7 @@ const Slider = () => {
           ))}
         </div>
       </div>
+
       <div className="sbc">
         <button onClick={prevSlide} className="sb">
           Previous
