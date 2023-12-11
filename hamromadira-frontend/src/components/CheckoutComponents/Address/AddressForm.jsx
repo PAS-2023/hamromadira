@@ -1,5 +1,5 @@
-import React from "react";
-import "./paymentMenu.css";
+//import "../paymentMenu.css";
+import "../Payment/PaymentMenu.css";
 const AddressForm = () => {
   return (
     <div className="addressForm-wrapper">

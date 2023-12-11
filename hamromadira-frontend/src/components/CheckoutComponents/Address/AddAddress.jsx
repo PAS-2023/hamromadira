@@ -1,5 +1,3 @@
-import React from "react";
-
 const AddAddress = () => {
   return (
     <div className="add-address-wrapper">
