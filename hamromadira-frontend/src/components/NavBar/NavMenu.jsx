@@ -22,8 +22,6 @@ export default function NavMenu() {
   return (
     <>
       <ul className="nav-menu">
-        {" "}
-        window.sessionStorage.clear();
         <li>
           <Link to="/">
             <div className="nav-link">

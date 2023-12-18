@@ -3,11 +3,9 @@ const mongoose = require("mongoose");
 const orderProductSchema = new mongoose.Schema(
   {
     sku: { type: String, required: true },
+    name: { type: String, required: true },
     quantity: { type: Number, required: true },
     price: { type: Number, required: true },
-    discount: { type: Number, required: false },
-    preTax: { type: Number, required: false },
-    afterTax: { type: Number, required: false },
   },
   { _id: false }
 );
@@ -25,6 +23,13 @@ const orderSchema = new mongoose.Schema({
   userID: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+  },
+  paymentMode: {
+    type: String,
+    enum: {
+      values: ["COD", "OP"], //OP->Online Payment
+      message: "Please provide a valid payment mode",
+    },
   },
   paymentStatus: {
     type: String,

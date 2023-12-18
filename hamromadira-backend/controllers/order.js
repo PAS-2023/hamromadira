@@ -4,7 +4,7 @@ const { tokenExtractor, userExtractor } = require("../utils/middleware");
 
 orderRoute.get("/", tokenExtractor, userExtractor, async (req, res) => {
   try {
-    const response = await Order.find({});
+    const response = await Order.find({ userID: req.userId });
     res.status(200).json(response);
   } catch (error) {
     res.status(400).json({ error });
@@ -12,9 +12,11 @@ orderRoute.get("/", tokenExtractor, userExtractor, async (req, res) => {
 });
 
 orderRoute.post("/", tokenExtractor, userExtractor, async (req, res) => {
-  const newOrder = req.body;
+  req.body["userID"] = req.userId;
+  req.body["status"] = "placed";
   try {
-    const response = await Order.create(newOrder);
+    const newOrder = new Order(req.body);
+    const response = await newOrder.save();
     res.status(200).json(response);
   } catch (error) {
     res.status(200).json({ error });

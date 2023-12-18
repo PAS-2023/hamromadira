@@ -33,7 +33,7 @@ const ItemDetail = () => {
         addItemsToCart({
           name: product.name,
           price: product.price,
-          skus: product.sku,
+          sku: product.sku,
           quantity: count,
         })
       );

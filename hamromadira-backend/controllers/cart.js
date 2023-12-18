@@ -5,7 +5,8 @@ const { tokenExtractor, userExtractor } = require("../utils/middleware");
 cartRoute.get("/", tokenExtractor, userExtractor, async (req, res) => {
   try {
     const userId = req.userId;
-    const result = await User.findById(userId, "cart");
+    const result = await User.findById(userId);
+    console.log(result);
     res.status(200).json(result.cart);
   } catch (error) {
     res.status(400).json(error);
@@ -15,9 +16,10 @@ cartRoute.get("/", tokenExtractor, userExtractor, async (req, res) => {
 cartRoute.put("/edit", tokenExtractor, userExtractor, async (req, res) => {
   const userId = req.userId;
   const cartProd = req.body;
+  console.log(cartProd);
   try {
     const { cart } = await User.findById(userId, "cart");
-    const cartCheck = cart.filter((item) => item.skus === cartProd.skus);
+    const cartCheck = cart.filter((item) => item.sku === cartProd.sku);
     const isDuplicate = cartCheck.length > 0;
     if (isDuplicate) {
       let result = await User.updateOne(
@@ -36,7 +38,6 @@ cartRoute.put("/edit", tokenExtractor, userExtractor, async (req, res) => {
       },
       { new: true }
     );
-    console.log("hallo world");
     return res.status(200).json(cartProd);
   } catch (error) {
     res.status(400).json(error);
@@ -68,15 +69,15 @@ cartRoute.delete(
   userExtractor,
   async (req, res) => {
     const userId = req.userId;
-    const skus = req.params.skus;
+    const sku = req.params.skus;
     try {
       await User.findByIdAndUpdate(
         { _id: userId },
-        { $pull: { cart: { skus: skus } } },
+        { $pull: { cart: { sku: sku } } },
         { new: true }
       );
 
-      return res.status(200).json({ skus });
+      return res.status(200).json({ sku });
     } catch (error) {
       res.status(400).json(error);
     }
