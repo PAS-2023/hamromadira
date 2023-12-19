@@ -1,13 +1,10 @@
 const mongoose = require("mongoose");
 
-const addressSchema = new mongoose.Schema(
-  {
-    district: { type: String, required: true },
-    city: { type: String, required: true },
-    landmark: { type: String, required: false },
-  },
-  { _id: false }
-);
+const addressSchema = new mongoose.Schema({
+  district: { type: String, required: true },
+  city: { type: String, required: true },
+  landmark: { type: String, required: false },
+});
 
 const cartListSchema = new mongoose.Schema(
   {
