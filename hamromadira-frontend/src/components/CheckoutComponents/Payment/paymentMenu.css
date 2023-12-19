@@ -137,7 +137,11 @@ button {
   display: flex;
   flex-direction: column;
   align-items: start;
+  margin: 4px;
+  gap: 5px;
+  width: 100%;
 }
+
 .addform-btn > button {
   background-color: #8d61ff;
   width: 50%;
