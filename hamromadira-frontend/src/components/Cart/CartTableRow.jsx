@@ -3,14 +3,14 @@ import { useState } from "react";
 import { removeCartItem, editItemsToCart } from "../../reducers/cartReducer";
 import { useDispatch } from "react-redux";
 
-export default function CartTableRow({ name, quantity, price, skus }) {
+export default function CartTableRow({ name, quantity, price, sku }) {
   const [qty, setQty] = useState(quantity);
   const dispatch = useDispatch();
   const handleDelete = () => {
-    dispatch(removeCartItem(skus));
+    dispatch(removeCartItem(sku));
   };
   const handleChange = (qty) => {
-    dispatch(editItemsToCart({ skus, quantity: qty, name, price }));
+    dispatch(editItemsToCart({ sku, quantity: qty, name, price }));
   };
   return (
     <tr>

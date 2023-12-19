@@ -23,7 +23,7 @@ const cartSlice = createSlice({
       );
     },
     removeItem(state, action) {
-      return state.filter((item) => item.skus !== action.payload.skus);
+      return state.filter((item) => item.sku !== action.payload.sku);
     },
     clearCart(state, action) {
       return action.payload;
