@@ -2,7 +2,7 @@ import React from 'react';
 import "./dashboard.css"
 
 const Menu = () => {
-    const menuItem=["DashBoard","Product","Customer","Order","Comments","SignOut"]
+    const menuItem=["DashBoard","Add Product","Customer","Order","Comments","SignOut"]
   return (
     <>
       <div className="sidebox">
@@ -10,7 +10,7 @@ const Menu = () => {
           {menuItem.map((item) => {
             return (
               <>
-                <a href="">{item}</a>
+                <span> { item}</span>
               </>
             );
           })}

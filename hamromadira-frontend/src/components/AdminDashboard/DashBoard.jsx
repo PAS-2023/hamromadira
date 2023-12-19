@@ -1,18 +1,14 @@
-import React from 'react'
-import Menu from './Menu'
-import Notification from './Notification'
-import SalesInfo from './SalesInfo'
+import Menu from "./Menu";
+import AddProduct from "./product/AddProduct";
+import "./dashboard.css";
 
 const DashBoard = () => {
   return (
-    <div>
-          
-          <SalesInfo />
-          <Notification />
-          
-
+    <div className="check">
+      <Menu />
+      <AddProduct />
     </div>
-  )
-}
+  );
+};
 
-export default DashBoard
+export default DashBoard;

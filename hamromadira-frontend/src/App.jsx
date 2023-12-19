@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./reducers/userReducer";
 import CheckOutPage from "./pages/CheckOutPage";
 import { initializeCart } from "./reducers/cartReducer";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ function App() {
   console.log(loggedUser.length);
   return (
     <div>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/items/:skus" element={<ItemsPage />} />
         <Route
@@ -57,7 +58,8 @@ function App() {
             loggedUser.length ? <Navigate replace to="/" /> : <LoginPage />
           }
         />
-      </Routes>
+      </Routes> */}
+      <AdminDashboard />
     </div>
   );
 }
