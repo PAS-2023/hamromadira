@@ -29,3 +29,8 @@ export const getRecommendedItems = async (sku) => {
   const response = await axios.get(`${baseURL}/recommended/${sku}`);
   return response.data;
 };
+
+export const getCartRecommendedItems = async () => {
+  const response = await axios.get(itemDetailURL);
+  return response.data;
+};
