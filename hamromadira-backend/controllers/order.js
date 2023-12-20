@@ -11,6 +11,15 @@ orderRoute.get("/", tokenExtractor, userExtractor, async (req, res) => {
   }
 });
 
+orderRoute.get("/", tokenExtractor, userExtractor, async (req, res) => {
+  try {
+    const response = await Order.find();
+    res.status(200).json(response);
+  } catch (error) {
+    res.status(400).json({ error });
+  }
+});
+
 orderRoute.post("/", tokenExtractor, userExtractor, async (req, res) => {
   req.body["userID"] = req.userId;
   req.body["status"] = "placed";

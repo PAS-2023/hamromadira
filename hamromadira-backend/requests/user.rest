@@ -13,7 +13,7 @@ content-type: application/json
     "cart":[]
 }
 ###
-GET http://localhost:3001/api/cart/65721434e71c03fd46ebc36b
+GET http://localhost:3001/api/cart/65760f6aeb8b8a219c854a28
 
 ###
 DELETE http://localhost:3001/api/cart/remove/65721434e71c03fd46ebc36b
