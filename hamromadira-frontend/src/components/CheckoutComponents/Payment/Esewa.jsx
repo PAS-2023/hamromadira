@@ -1,9 +1,6 @@
 import "./paymentMenu.css";
 
 const Esewa = () => {
-  const handleSubmit = () => {
-    console.log("submit button clicked");
-  };
   return (
     <>
       <div className="wrapper">
@@ -15,9 +12,6 @@ const Esewa = () => {
             <label>Remarks:</label>
             <input className="ph-box" type="text" />
           </form>
-        </div>
-        <div className="payment-btn">
-          <button onClick={handleSubmit}>Proceed Payment</button>
         </div>
       </div>
     </>

@@ -11,9 +11,6 @@ const Khalti = () => {
             <input className="ph-box" type="text" />
           </form>
         </div>
-        <div className="payment-btn">
-          <button>Proceed Payment</button>
-        </div>
       </div>
     </>
   );

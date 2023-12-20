@@ -15,6 +15,7 @@ const PaymentMethod = () => {
   const goCod = (e) => {
     setPayment(e.target.value);
   };
+  const handleOrder = () => {};
   return (
     <>
       <div className="radio">
@@ -64,6 +65,9 @@ const PaymentMethod = () => {
       ) : (
         []
       )}
+      <div className="payment-btn">
+        <button onClick={handleOrder}>Proceed Payment</button>
+      </div>
     </>
   );
 };

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./reducers/userReducer";
 import CheckOutPage from "./pages/CheckOutPage";
 import { initializeCart } from "./reducers/cartReducer";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   const dispatch = useDispatch();
@@ -58,6 +59,7 @@ function App() {
           }
         />
       </Routes>
+      {/* <AdminDashboard /> */}
     </div>
   );
 }

@@ -9,7 +9,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .logo {
@@ -91,6 +90,7 @@ ul {
     width: 70%;
     transition: transform 0.3s ease-in;
   }
+ 
   .hamburger-menu {
     display: block;
   }

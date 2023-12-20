@@ -1,19 +1,28 @@
+/* eslint-disable react/prop-types */
 import AddressDisplay from "./AddressDisplay";
-import AddressForm from "./AddressForm";
 import AddAddress from "./AddAddress";
-import "../Payment/PaymentMenu.css";
+import "../Payment/paymentMenu.css";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { userInfo } from "../../../reducers/userInfoReducer";
 
 const AdressWrapper = () => {
-  const addressList = [
-    { district: "Chitwan", city: "Bharatpur", Landmark: "near Campus" },
-  ];
+  const addressList = useSelector((state) => state.userInfo.address);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(userInfo());
+  }, []);
+
   return (
     <div className="address-wrapper">
-      {addressList.map((value) => (
-        <AddressDisplay key={value.Landmark} value={value} />
-      ))}
-      <AddressForm />
-      <AddAddress />
+      {addressList ? (
+        addressList.map((value) => (
+          <AddressDisplay key={value._id} value={value} />
+        ))
+      ) : (
+        <p>Loading....</p>
+      )}
+      {addressList && addressList.length < 3 ? <AddAddress /> : null}
     </div>
   );
 };

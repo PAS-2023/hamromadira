@@ -1,6 +1,4 @@
 import "./slider.css";
-// import { sliderComp } from "./sliderComp";
-// import axios from "axios";
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -38,8 +36,8 @@ const Slider = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="images">
+      <div className="slider-container">
+        <div className="slider-images">
           {recommendedItems.slice(currentIndex, currentIndex + 4).map((val) => (
             <Link key={val.sku} to={`/items/${val.sku}`}>
               <Card

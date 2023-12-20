@@ -1,4 +1,3 @@
-import React from 'react';
 import "./dashboard.css"
 
 const SalesInfo = () => {
@@ -6,24 +5,30 @@ const SalesInfo = () => {
     <>
       <div className="container">
         <div className="view">
-            <p>1508</p>
-            <div className="p1">views</div>
+          <span>1508</span>
+          <div className="p1">Views</div>
         </div>
         <div className="view">
-            <p>80</p>
-            <div className="p1">sales</div>
+          <span>80</span>
+          <div className="p1">
+            sales
+          </div>
         </div>
         <div className="view">
-            <p>23</p>
-            <div className="p1">Orders</div>
+          <span>23</span>
+          <div className="p1">
+            Orders
+          </div>
         </div>
         <div className="view">
-            <p>RS100000</p>
-            <div className="p1">Transaction Amounts</div>
+          <span>RS100000</span>
+          <div className="p1">
+            Transaction Amounts
+          </div>
         </div>
-    </div>
+      </div>
     </>
-  )
+  );
 }
 
 export default SalesInfo
