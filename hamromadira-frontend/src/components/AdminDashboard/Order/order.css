@@ -45,27 +45,28 @@ table td{
     background: none;
     justify-content: center;
 } */
-.order {
-  display: flex;
+/* .order {
+  /* display: flex;
   justify-content: center;
-  align-items: flex-start;
-  /* border: 2px solid green; */
-  width: 100%;
-  padding: 20px;
-  /* padding-left: 10px; */
-}
-.order-wrapper {
+  align-items: flex-start; */
+/* border: 2px solid green; */
+/* width: 100%;
+  padding: 20px; */
+/* padding-left: 10px; */
+
+/* .order-wrapper {
   border-radius: 5px;
   width: 90%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 50%;
   background-color: gainsboro;
   align-items: center;
   justify-content: center;
   padding: 10px;
-}
-.order-details {
+  border: 2px solid green;
+} */
+/* .order-details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -96,6 +97,79 @@ table td{
   justify-content: center;
   color: white;
   border-radius: 5px;
-  background: green;
+  background: #8d61ff;
   cursor: pointer;
+} */
+
+/* .expand-btn > button {
+  background-color: #8d61ff;
+  width: 60%;
+} */
+.order-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  width: 90%;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  margin: auto;
+  background-color: #eaeaea;
+}
+
+.order-container {
+  width: 100%;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  margin: auto;
+  gap: 38%;
+}
+.order-details-1 p,
+span {
+  background-color: #eaeaea;
+  /* color: #8d61ff; */
+}
+.order-details-1 span{
+  color:#8d61ff;
+}
+.order-details-2 span{
+  color: #8d61ff;
+}
+.order-details-2 p,
+span {
+  background: #eaeaea;
+}
+.order-details-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background-color: #eaeaea;
+}
+.expand-btn p {
+  background-color: #8d61ff;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expand-btn {
+  background-color: transparent;
+  cursor: pointer;
+}
+.order {
+  width: 100%;
+  padding: 2rem;
+}
+.expand-content {
+  background: #eaeaea;
+}
+.expand-content th{
+  color: #8d61ff;
+}
+.expand-content th,
+td {
+  background: #eaeaea;
 }
