@@ -1,5 +1,4 @@
 import AddressDisplay from "./AddressDisplay";
-import AddressForm from "./AddressForm";
 import AddAddress from "./AddAddress";
 import "./paymentMenu.css";
 
@@ -12,7 +11,6 @@ const AdressWrapper = () => {
       {addressList.map((value) => (
         <AddressDisplay key={value.Landmark} value={value} />
       ))}
-      <AddressForm />
       <AddAddress />
     </div>
   );
