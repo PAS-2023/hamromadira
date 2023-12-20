@@ -1,7 +1,7 @@
 import AddressDisplay from "./AddressDisplay";
 import AddressForm from "./AddressForm";
 import AddAddress from "./AddAddress";
-import "../Payment/PaymentMenu.css";
+import "../Payment/paymentMenu.css";
 
 const AdressWrapper = () => {
   const addressList = [

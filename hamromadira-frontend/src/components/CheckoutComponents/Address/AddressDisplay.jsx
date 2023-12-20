@@ -1,4 +1,4 @@
-import "../Payment/PaymentMenu.css";
+import "../Payment/paymentMenu.css";
 
 const AddressDisplay = (value) => {
   return (

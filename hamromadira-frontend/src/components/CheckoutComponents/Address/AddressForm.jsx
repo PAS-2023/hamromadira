@@ -1,5 +1,5 @@
 //import "../paymentMenu.css";
-import "../Payment/PaymentMenu.css";
+import "../Payment/paymentMenu.css";
 const AddressForm = () => {
   return (
     <div className="addressForm-wrapper">
