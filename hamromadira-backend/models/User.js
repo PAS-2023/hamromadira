@@ -1,17 +1,14 @@
 const mongoose = require("mongoose");
 
-const addressSchema = new mongoose.Schema(
-  {
-    district: { type: String, required: true },
-    city: { type: String, required: true },
-    landmark: { type: String, required: false },
-  },
-  { _id: false }
-);
+const addressSchema = new mongoose.Schema({
+  district: { type: String, required: true },
+  city: { type: String, required: true },
+  landmark: { type: String, required: false },
+});
 
 const cartListSchema = new mongoose.Schema(
   {
-    skus: { type: String, required: true },
+    sku: { type: String, required: true },
     name: { type: String, required: true },
     price: { type: Number, required: true },
     quantity: { type: Number, required: true },
@@ -32,7 +29,6 @@ const userSchema = new mongoose.Schema({
     required: true,
     enum: { values: ["admin", "user"], message: "{VALUE} is not supported" },
   },
-  order: [{ type: mongoose.Schema.Types.ObjectId, ref: "Order" }],
   isDisabled: { type: Boolean, required: true, default: false },
 });
 

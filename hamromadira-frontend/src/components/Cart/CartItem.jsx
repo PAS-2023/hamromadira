@@ -27,11 +27,11 @@ const CartItem = () => {
             <>
               {cartItems.map((item) => (
                 <CartTableRow
-                  key={item.skus}
+                  key={item.sku}
                   name={item.name}
                   quantity={item.quantity}
                   price={item.price}
-                  skus={item.skus}
+                  sku={item.sku}
                 />
               ))}
             </>

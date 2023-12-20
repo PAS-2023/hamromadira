@@ -1,13 +1,11 @@
-import React from 'react'
-
-const Khalti = () => {
+const Cod = () => {
   return (
     <>
       <div className="wrapper">
-        <h2 className="payment-title-khalti">Khalti Payment</h2>
-        <div className="form-container-khalti">
+        <h2 className="payment-title-cod">Cash On delivery</h2>
+        <div className="form-container-cod">
           <form className="form1">
-            <label>Khalti ID:</label>
+            <label>Phone Number:</label>
             <input className="ph-box" type="text" placeholder="9854736327" />
             <label>Remarks:</label>
             <input className="ph-box" type="text" />
@@ -19,6 +17,6 @@ const Khalti = () => {
       </div>
     </>
   );
-}
+};
 
-export default Khalti
+export default Cod;
