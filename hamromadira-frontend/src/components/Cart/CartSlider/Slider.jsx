@@ -102,7 +102,7 @@ const Slider = () => {
     },
   ]);
 
-  console.log("this is recommended Items :", recommendedItems);
+  // console.log("this is recommended Items :", recommendedItems);
   // this is slider section
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -121,16 +121,16 @@ const Slider = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="cart-slider-container">
         <h3 style={{ margin: "15px" }}>Recommended Items:</h3>
-        <div className="images">
+        <div className="cart-slider-images">
           {recommendedItems.slice(currentIndex, currentIndex + 4).map((val) => (
             <Link key={val.sku} to={`/items/${val.sku}`}>
               <Card
                 img={`/${val.img}`}
                 name={val.name}
                 price={val.price}
-                className="slide"
+                className="cart-slide"
               />
             </Link>
           ))}

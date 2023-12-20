@@ -5,6 +5,7 @@ import { getItemDetail } from "../../../services/products/products";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemsToCart } from "../../../reducers/cartReducer";
 import { useNavigate } from "react-router-dom";
+import RecommendedItem from "../RecommendedItem/RecommendedItems";
 
 const ItemDetail = () => {
   const { skus } = useParams();
@@ -83,6 +84,7 @@ const ItemDetail = () => {
             <button onClick={addToCart}>Add to Cart</button>
           </div>
         </div>
+        <RecommendedItem />
       </div>
     </div>
   );

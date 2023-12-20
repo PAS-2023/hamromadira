@@ -26,7 +26,7 @@ function App() {
   console.log(loggedUser.length);
   return (
     <div>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/items/:skus" element={<ItemsPage />} />
         <Route
@@ -58,8 +58,8 @@ function App() {
             loggedUser.length ? <Navigate replace to="/" /> : <LoginPage />
           }
         />
-      </Routes> */}
-      <AdminDashboard />
+      </Routes>
+      {/* <AdminDashboard /> */}
     </div>
   );
 }

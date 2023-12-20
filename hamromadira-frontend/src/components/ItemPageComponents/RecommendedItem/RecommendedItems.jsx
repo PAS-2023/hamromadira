@@ -4,7 +4,7 @@ const RecommendedItems = () => {
   return (
     <div className="Rcontainer">
       <div className="name">
-        <h3>Recommended Itmes :</h3>
+        <h3>Recommended Items :</h3>
       </div>
       <Slider />
     </div>
