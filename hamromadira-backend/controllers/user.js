@@ -4,12 +4,19 @@ const { User } = require("../models/index");
 const { tokenExtractor, userExtractor } = require("../utils/middleware");
 const bcrypt = require("bcrypt");
 
-userRoute.get("/", async (req, res) => {
+userRoute.get("/info", tokenExtractor, userExtractor, async (req, res) => {
   try {
-    const result = await User.find({});
-    res.status(200).json(result);
+    res.status(200).json(req.user);
   } catch (error) {
-    console.log(error);
+    res.status(400).json(error);
+  }
+});
+
+userRoute.get("/address", tokenExtractor, userExtractor, async (req, res) => {
+  try {
+    res.status(200).json(req.user.address);
+  } catch (error) {
+    res.status(400).json(error);
   }
 });
 
@@ -47,7 +54,7 @@ userRoute.put("/address", tokenExtractor, userExtractor, async (req, res) => {
       },
       { new: true }
     );
-    res.status(200).json(response);
+    res.status(200).json(response.address);
   } catch (error) {
     res.status(400).json(error);
   }

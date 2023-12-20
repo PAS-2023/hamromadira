@@ -28,10 +28,11 @@ const AddressDisplay = (value) => {
           <span>City : {value.value.city}</span>
         </div>
         <div className="landmark">
-          <span>LandMark : {value.value.Landmark}</span>
+          <span>LandMark : {value.value.landmark}</span>
         </div>
         <div className="addform-btn">
           <button onClick={handleOpen}>Edit</button>
+          <button onClick={handleOpen}>Select</button>
         </div>
       </div>
       <>
