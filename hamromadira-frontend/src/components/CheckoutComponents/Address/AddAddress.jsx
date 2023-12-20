@@ -1,6 +1,6 @@
-import { Modal, Box } from "@mui/material";
+import { Modal } from "@mui/material";
 import { useState } from "react";
-import AddressForm from "./AddressForm";
+// import AddressForm from "./AddressForm";
 
 const style = {
   position: "absolute",
@@ -8,9 +8,11 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
+  height: "30%",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
+
   p: 4,
 };
 const AddAddress = () => {
@@ -24,10 +26,28 @@ const AddAddress = () => {
           <h2>+</h2>
         </div>
       </div>
-      <Modal open={open} onClose={handleClose}>
-        <Box sx={style}>
-          <AddressForm />
-        </Box>
+      <Modal open={open} onClose={handleClose} style={style}>
+        <div className="addressForm-wrapper">
+          <form className="address-form">
+            <div className="input1">
+              <label>District:</label>
+              <input type="text" />
+            </div>
+            <div className="input1">
+              <label>City:</label>
+              <input type="text" />
+            </div>
+            <div className="input1">
+              <label>Landmark:</label>
+              <input type="text" />
+            </div>
+
+            <>
+              <button onClick={handleClose}>Add</button>
+              <button onClick={handleClose}>Cancel</button>
+            </>
+          </form>
+        </div>
       </Modal>
     </>
   );
