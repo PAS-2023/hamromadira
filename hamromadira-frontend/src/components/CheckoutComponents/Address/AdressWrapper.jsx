@@ -11,7 +11,7 @@ const AdressWrapper = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(userInfo());
-  }, []);
+  }, [addressList]);
 
   return (
     <div className="address-wrapper">
