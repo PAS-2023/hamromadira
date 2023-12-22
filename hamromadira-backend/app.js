@@ -12,6 +12,7 @@ const orderController = require("./controllers/order");
 const { requestLogger, unknownEndpoint } = require("./utils/middleware");
 
 app.use(cors());
+app.use(express.static("build"));
 app.use(express.json());
 
 mongoose.set("strictQuery", false);
