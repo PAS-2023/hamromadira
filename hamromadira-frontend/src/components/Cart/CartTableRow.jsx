@@ -26,11 +26,11 @@ export default function CartTableRow({ name, quantity, price, sku }) {
           >
             +
           </button>
-          {qty}
+          <div className="qtyVal">{qty}</div>
           <button
             onClick={() => {
-              setQty(qty + 1);
-              handleChange(qty + 1);
+              setQty(qty - 1);
+              handleChange(qty - 1);
             }}
           >
             -

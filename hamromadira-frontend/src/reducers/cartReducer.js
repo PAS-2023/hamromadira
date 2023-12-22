@@ -7,9 +7,11 @@ import {
   emptyCart,
 } from "../services/carts/cart";
 
+const initialState = [];
+
 const cartSlice = createSlice({
   name: "cart",
-  initialState: [],
+  initialState,
   reducers: {
     setCartItems(state, action) {
       return action.payload;
@@ -26,7 +28,7 @@ const cartSlice = createSlice({
       return state.filter((item) => item.sku !== action.payload.sku);
     },
     clearCart(state, action) {
-      return (state = []);
+      return initialState;
     },
   },
 });
@@ -60,8 +62,8 @@ export const removeCartItem = (skus) => {
 };
 export const removeAllCartItems = () => {
   return async (dispatch) => {
-    const response = await emptyCart();
-    dispatch(clearCart(response));
+    await emptyCart();
+    dispatch(clearCart());
   };
 };
 

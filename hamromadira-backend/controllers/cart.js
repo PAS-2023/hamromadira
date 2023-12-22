@@ -6,7 +6,6 @@ cartRoute.get("/", tokenExtractor, userExtractor, async (req, res) => {
   try {
     const userId = req.userId;
     const result = await User.findById(userId);
-    console.log(result);
     res.status(200).json(result.cart);
   } catch (error) {
     res.status(400).json(error);
@@ -16,14 +15,13 @@ cartRoute.get("/", tokenExtractor, userExtractor, async (req, res) => {
 cartRoute.put("/edit", tokenExtractor, userExtractor, async (req, res) => {
   const userId = req.userId;
   const cartProd = req.body;
-  console.log(cartProd);
   try {
     const { cart } = await User.findById(userId, "cart");
     const cartCheck = cart.filter((item) => item.sku === cartProd.sku);
     const isDuplicate = cartCheck.length > 0;
     if (isDuplicate) {
       let result = await User.updateOne(
-        { _id: userId, "cart.skus": cartProd.skus },
+        { _id: userId, "cart.sku": cartProd.skus },
         { $set: { "cart.$.quantity": cartProd.quantity } }
       );
       if (result.acknowledged) {
@@ -44,24 +42,24 @@ cartRoute.put("/edit", tokenExtractor, userExtractor, async (req, res) => {
   }
 });
 
-// cartRoute.delete(
-//   "/remove/all",
-//   tokenExtractor,
-//   userExtractor,
-//   async (req, res) => {
-//     const userId = req.userId;
-//     try {
-//       const result = await User.findByIdAndUpdate(
-//         { _id: userId },
-//         { cart: [] },
-//         { new: true }
-//       );
-//       res.status(200).json(result.cart);
-//     } catch (error) {
-//       res.status(400).json({ error });
-//     }
-//   }
-// );
+cartRoute.delete(
+  "/remove/all",
+  tokenExtractor,
+  userExtractor,
+  async (req, res) => {
+    const userId = req.userId;
+    try {
+      await User.findByIdAndUpdate(
+        { _id: userId },
+        { cart: [] },
+        { new: true }
+      );
+      res.status(200).json([]);
+    } catch (error) {
+      res.status(400).json({ error });
+    }
+  }
+);
 
 cartRoute.delete(
   "/remove/:skus",

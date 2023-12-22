@@ -24,6 +24,8 @@ const orderSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  orderUser: { type: String, required: true },
+  orderDate: { type: Date, required: true },
   paymentMode: {
     type: String,
     enum: {

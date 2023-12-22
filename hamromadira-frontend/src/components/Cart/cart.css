@@ -53,11 +53,14 @@
   display: flex;
   gap: 0.25rem;
   justify-content: center;
+  align-items: center;
 }
 
 .qty > button {
   border: none;
-  font-size: 1rem;
+  font-weight: bolder;
+  padding: 0.3rem;
+  color: red;
 }
 .remove-button > button {
   border: none;

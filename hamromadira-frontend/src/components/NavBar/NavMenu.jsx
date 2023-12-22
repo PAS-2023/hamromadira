@@ -11,8 +11,9 @@ import { removeUser } from "../../reducers/userReducer";
 export default function NavMenu() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const loggedUser = useSelector((state) => state.loggedUser);
-  let cartItems = useSelector((state) => state.cart);
+  const cartItems = useSelector((state) => state.cart);
   const handleLogOut = () => {
     dispatch(removeUser());
     window.sessionStorage.clear();

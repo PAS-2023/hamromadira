@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getOrder, addOrder } from "../services/order";
+import { getOrder, addOrder } from "../services/order/order";
 
 const orderSlice = createSlice({
   name: "order",
@@ -41,3 +41,5 @@ export const createOrder = (orderDetails) => {
     dispatch(addOrderInfo(response));
   };
 };
+
+export default orderSlice.reducer;

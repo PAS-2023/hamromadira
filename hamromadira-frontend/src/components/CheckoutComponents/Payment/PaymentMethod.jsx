@@ -3,8 +3,15 @@ import "./paymentMenu.css";
 import Esewa from "./Esewa";
 import Khalti from "./Khalti";
 import Cod from "./Cod";
+import { useSelector, useDispatch } from "react-redux";
+import { createOrder } from "../../../reducers/orderReducer";
+import { useNavigate } from "react-router-dom";
 
 const PaymentMethod = () => {
+  const userInfo = useSelector((state) => state.userInfo);
+  const cartInfo = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [payment, setPayment] = useState("esewa");
   const goEsewa = (e) => {
     setPayment(e.target.value);
@@ -15,7 +22,25 @@ const PaymentMethod = () => {
   const goCod = (e) => {
     setPayment(e.target.value);
   };
-  const handleOrder = () => {};
+  const handleOrder = () => {
+    const orderDetails = {
+      orderUser: userInfo.fullname,
+      orderDate: new Date().toISOString().split("T")[0],
+      paymentMode: payment === "cod" ? "COD" : "OP",
+      paymentStatus: payment === "cod" ? "pending" : "processed",
+      amount: window.sessionStorage.getItem("cartTotal"),
+      items: cartInfo,
+      shippingAddress: {
+        district: "Chitwan",
+        city: "Bharatpur",
+        landmark: "Near Birendra Campus",
+      },
+    };
+
+    dispatch(createOrder(orderDetails));
+
+    navigate("/");
+  };
   return (
     <>
       <div className="radio">

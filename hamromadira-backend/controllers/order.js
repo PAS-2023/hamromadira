@@ -1,5 +1,5 @@
 const orderRoute = require("express").Router();
-const { Order } = require("../models/index");
+const { Order, User } = require("../models/index");
 const { tokenExtractor, userExtractor } = require("../utils/middleware");
 
 orderRoute.get("/", tokenExtractor, userExtractor, async (req, res) => {
@@ -26,6 +26,7 @@ orderRoute.post("/", tokenExtractor, userExtractor, async (req, res) => {
   try {
     const newOrder = new Order(req.body);
     const response = await newOrder.save();
+    await User.findByIdAndUpdate({ _id: req.userId }, { cart: [] });
     res.status(200).json(response);
   } catch (error) {
     res.status(200).json({ error });
